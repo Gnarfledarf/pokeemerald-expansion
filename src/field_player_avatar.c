@@ -155,6 +155,7 @@ static bool8 PlayerAvatar_SecretBaseMatSpinStep3(struct Task *, struct ObjectEve
 static void CreateStopSurfingTask(enum Direction);
 static void Task_StopSurfingInit(u8);
 static void Task_WaitStopSurfing(u8);
+static bool8 ShouldPlayerRun(u16 heldKeys);
 
 static u8 TrySpinPlayerForWarp(struct ObjectEvent *, s16 *);
 
@@ -906,8 +907,7 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
     }
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
-     && (heldKeys & B_BUTTON)
-     && FlagGet(FLAG_SYS_B_DASH)
+     && ShouldPlayerRun(heldKeys)
      && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0
      && !FollowerNPCComingThroughDoor()
      && (I_ORAS_DOWSING_FLAG == 0 || (I_ORAS_DOWSING_FLAG != 0 && !FlagGet(I_ORAS_DOWSING_FLAG))))
@@ -2025,6 +2025,15 @@ static void Task_WaitStopSurfing(u8 taskId)
 #endif
         DestroyTask(taskId);
     }
+}
+
+static bool8 ShouldPlayerRun(u16 heldKeys)
+{
+    bool8 isHoldingB = (heldKeys & B_BUTTON);
+
+    return (FlagGet(FLAG_AUTORUN_TOGGLE) == TRUE && !isHoldingB)
+        || (isHoldingB);
+    
 }
 
 void SetSpinStartFacingDir(enum Direction direction)
