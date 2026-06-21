@@ -16,12 +16,12 @@
   "connections": [
     {
       "map": "MAP_PEWTER_CITY",
-      "offset": -12,
+      "offset": -13,
       "direction": "up"
     },
     {
       "map": "MAP_VIRIDIAN_CITY",
-      "offset": -12,
+      "offset": -18,
       "direction": "down"
     }
   ],

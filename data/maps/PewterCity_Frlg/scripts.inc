@@ -1,6 +1,11 @@
 PewterCity_Frlg_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, PewterCity_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, PewterCity_OnTransition
 	.byte 0
+
+PewterCity_OnLoad::
+	special SetRoofBirds
+	end
 
 PewterCity_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_PEWTER_CITY
@@ -75,6 +80,7 @@ PewterCity_EventScript_WalkToGymNorth::
 	walk_left
 	walk_left
 	walk_left
+	walk_left
 	walk_up
 	walk_up
 	walk_up
@@ -134,14 +140,21 @@ PewterCity_EventScript_WalkToGymNorth::
 	walk_left
 	walk_left
 	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	walk_left
 	walk_left
 	walk_left
@@ -158,6 +171,14 @@ PewterCity_EventScript_WalkToGymNorth::
 	walk_down
 	walk_down
 	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_right
 .endm
 
@@ -482,20 +503,25 @@ PewterCity_EventScript_CheckedOutMuseum::
 	end
 
 .macro walk_to_museum
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	walk_up
 	walk_up
 	walk_up
 	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
+	walk_up
+	walk_up
 	walk_up
 	walk_up
 	walk_up
@@ -509,18 +535,26 @@ PewterCity_EventScript_CheckedOutMuseum::
 .endm
 
 .macro walk_to_museum_south
+	walk_right
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	walk_up
 	walk_up
 	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
+	walk_up
+	walk_up
+	walk_up
 	walk_up
 	walk_up
 	walk_up
@@ -547,30 +581,27 @@ PewterCity_Movement_GuideWalkToMuseumNorth::
 	step_end
 
 PewterCity_Movement_PlayerWalkToMuseumSouth::
-	delay_16
-	delay_16
-	walk_left
+	walk_down
 	walk_to_museum_south
 	delay_8
 	walk_in_place_faster_up
 	step_end
 
 PewterCity_Movement_GuideWalkToMuseumSouth::
-	walk_left
-	walk_up
 	walk_to_museum_south
 	walk_left
 	walk_in_place_faster_up
 	step_end
 
 PewterCity_Movement_PlayerWalkToMuseumWest::
-	walk_left
+	walk_up
+	walk_down
 	walk_to_museum
-	delay_8
 	walk_in_place_faster_up
 	step_end
 
 PewterCity_Movement_GuideWalkToMuseumWest::
+	walk_right
 	walk_to_museum
 	walk_left
 	walk_in_place_faster_up
@@ -651,191 +682,151 @@ PewterCity_EventScript_CitySign::
 	msgbox PewterCity_Text_CitySign, MSGBOX_SIGN
 	end
 
-PewterCity_EventScript_RunningShoesAide::
-	lock
-	faceplayer
-	setvar VAR_TEMP_1, 0
-	call PewterCity_EventScript_AideGiveRunningShoes
-	release
-	end
-
-PewterCity_EventScript_RunningShoesAideTriggerTop::
-	lockall
-	setvar VAR_TEMP_1, 1
-	call PewterCity_EventScript_AideGiveRunningShoes
-	releaseall
-	end
-
-PewterCity_EventScript_RunningShoesAideTriggerMid::
-	lockall
-	setvar VAR_TEMP_1, 2
-	call PewterCity_EventScript_AideGiveRunningShoes
-	releaseall
-	end
-
-PewterCity_EventScript_RunningShoesAideTriggerBottom::
-	lockall
-	setvar VAR_TEMP_1, 3
-	call PewterCity_EventScript_AideGiveRunningShoes
-	releaseall
-	end
-
-PewterCity_EventScript_AideGiveRunningShoes::
-	textcolor NPC_TEXT_COLOR_MALE
-	call_if_eq VAR_TEMP_1, 1, PewterCity_EventScript_AideNoticePlayer
-	call_if_eq VAR_TEMP_1, 2, PewterCity_EventScript_AideNoticePlayer
-	call_if_eq VAR_TEMP_1, 3, PewterCity_EventScript_AideNoticePlayer
-	waitse
-	playse SE_PIN
-	applymovement LOCALID_PEWTER_AIDE, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_PEWTER_AIDE, Common_Movement_Delay48
-	waitmovement 0
-	msgbox PewterCity_Text_OhPlayer
-	call_if_eq VAR_TEMP_1, 0, PewterCity_EventScript_AideApproachPlayer0
-	call_if_eq VAR_TEMP_1, 1, PewterCity_EventScript_AideApproachPlayer1
-	call_if_eq VAR_TEMP_1, 2, PewterCity_EventScript_AideApproachPlayer2
-	call_if_eq VAR_TEMP_1, 3, PewterCity_EventScript_AideApproachPlayer3
-	msgbox PewterCity_Text_AskedToDeliverThis
-	textcolor NPC_TEXT_COLOR_NEUTRAL
-	playfanfare MUS_RG_OBTAIN_KEY_ITEM
-	message PewterCity_Text_ReceivedRunningShoesFromAide
-	waitmessage
-	waitfanfare
-	msgbox PewterCity_Text_SwitchedShoesWithRunningShoes
-	special DisableMsgBoxWalkaway
-	signmsg
-	msgbox PewterCity_Text_ExplainRunningShoes
-	normalmsg
-	call EventScript_RestorePrevTextColor
-	msgbox PewterCity_Text_MustBeGoingBackToLab
-	closemessage
-	call_if_eq VAR_TEMP_1, 0, PewterCity_EventScript_AideExit0
-	call_if_eq VAR_TEMP_1, 1, PewterCity_EventScript_AideExit1
-	call_if_eq VAR_TEMP_1, 2, PewterCity_EventScript_AideExit2
-	call_if_eq VAR_TEMP_1, 3, PewterCity_EventScript_AideExit3
-	delay 30
-	textcolor NPC_TEXT_COLOR_NEUTRAL
-	msgbox PewterCity_Text_RunningShoesLetterFromMom
-	closemessage
-	removeobject LOCALID_PEWTER_AIDE
-	setflag FLAG_AUTORUN_TOGGLE
-	setvar VAR_MAP_SCENE_PEWTER_CITY, 2
-	return
-
-PewterCity_EventScript_AideNoticePlayer::
-	applymovement LOCALID_PEWTER_AIDE, Common_Movement_WalkInPlaceFasterDown
-	waitmovement 0
-	return
+@PewterCity_EventScript_RunningShoesAide::
+@	lock
+@	faceplayer
+@	setvar VAR_TEMP_1, 0
+@	call PewterCity_EventScript_AideGiveRunningShoes
+@	release
+@	end
+@
+@PewterCity_EventScript_RunningShoesAideTriggerTop::
+@	lockall
+@	setvar VAR_TEMP_1, 1
+@	call PewterCity_EventScript_AideGiveRunningShoes
+@	releaseall
+@	end
+@
+@PewterCity_EventScript_RunningShoesAideTriggerMid::
+@	lockall
+@	setvar VAR_TEMP_1, 2
+@	call PewterCity_EventScript_AideGiveRunningShoes
+@	releaseall
+@	end
+@
+@PewterCity_EventScript_RunningShoesAideTriggerBottom::
+@	lockall
+@	setvar VAR_TEMP_1, 3
+@	call PewterCity_EventScript_AideGiveRunningShoes
+@	releaseall
+@	end
+@
+@PewterCity_EventScript_AideGiveRunningShoes::
+@	return
+@
+@PewterCity_EventScript_AideNoticePlayer::
+@	applymovement LOCALID_PEWTER_AIDE, Common_Movement_WalkInPlaceFasterDown
+@	waitmovement 0
+@	return
 
 @ Aide already at player
-PewterCity_EventScript_AideApproachPlayer0::
-	closemessage
-	delay 20
-	return
+@PewterCity_EventScript_AideApproachPlayer0::
+@	closemessage
+@	delay 20
+@	return
 
-PewterCity_EventScript_AideApproachPlayer1::
-	closemessage
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
-	return
-
-PewterCity_EventScript_AideApproachPlayer2::
-	closemessage
-	applymovement LOCALID_PEWTER_AIDE, PewterCity_Movement_AideApproachPlayerMid
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
-	return
-
-PewterCity_EventScript_AideApproachPlayer3::
-	closemessage
-	applymovement LOCALID_PEWTER_AIDE, PewterCity_Movement_AideApproachPlayerBottom
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
-	return
-
-PewterCity_EventScript_AideExit0::
-	applymovement LOCALID_PEWTER_AIDE, PewterCity_Movement_AideExit0
-	waitmovement 0
-	return
-
-PewterCity_EventScript_AideExit1::
-	applymovement LOCALID_PEWTER_AIDE, PewterCity_Movement_AideExit1
-	waitmovement 0
-	return
-
-PewterCity_EventScript_AideExit2::
-	applymovement LOCALID_PEWTER_AIDE, PewterCity_Movement_AideExit2
-	waitmovement 0
-	return
-
-PewterCity_EventScript_AideExit3::
-	applymovement LOCALID_PEWTER_AIDE, PewterCity_Movement_AideExit3
-	waitmovement 0
-	return
-
-PewterCity_Movement_AideApproachPlayerMid::
-	delay_4
-	walk_down
-	step_end
-
-PewterCity_Movement_AideApproachPlayerBottom::
-	delay_4
-	walk_down
-	walk_down
-	step_end
-
-PewterCity_Movement_AideExit0::
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-PewterCity_Movement_AideExit1::
-	walk_left
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-PewterCity_Movement_AideExit2::
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-PewterCity_Movement_AideExit3::
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
+@PewterCity_EventScript_AideApproachPlayer1::
+@	closemessage
+@	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+@	waitmovement 0
+@	return
+@
+@PewterCity_EventScript_AideApproachPlayer2::
+@	closemessage
+@	applymovement LOCALID_PEWTER_AIDE, PewterCity_Movement_AideApproachPlayerMid
+@	waitmovement 0
+@	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+@	waitmovement 0
+@	return
+@
+@PewterCity_EventScript_AideApproachPlayer3::
+@	closemessage
+@	applymovement LOCALID_PEWTER_AIDE, PewterCity_Movement_AideApproachPlayerBottom
+@	waitmovement 0
+@	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+@	waitmovement 0
+@	return
+@
+@PewterCity_EventScript_AideExit0::
+@	applymovement LOCALID_PEWTER_AIDE, PewterCity_Movement_AideExit0
+@	waitmovement 0
+@	return
+@
+@PewterCity_EventScript_AideExit1::
+@	applymovement LOCALID_PEWTER_AIDE, PewterCity_Movement_AideExit1
+@	waitmovement 0
+@	return
+@
+@PewterCity_EventScript_AideExit2::
+@	applymovement LOCALID_PEWTER_AIDE, PewterCity_Movement_AideExit2
+@	waitmovement 0
+@	return
+@
+@PewterCity_EventScript_AideExit3::
+@	applymovement LOCALID_PEWTER_AIDE, PewterCity_Movement_AideExit3
+@	waitmovement 0
+@	return
+@
+@PewterCity_Movement_AideApproachPlayerMid::
+@	delay_4
+@	walk_down
+@	step_end
+@
+@PewterCity_Movement_AideApproachPlayerBottom::
+@	delay_4
+@	walk_down
+@	walk_down
+@	step_end
+@
+@PewterCity_Movement_AideExit0::
+@	walk_down
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	step_end
+@
+@PewterCity_Movement_AideExit1::
+@	walk_left
+@	walk_down
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	step_end
+@
+@PewterCity_Movement_AideExit2::
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	step_end
+@
+@PewterCity_Movement_AideExit3::
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	walk_left
+@	step_end
 
 @ Unused
 PewterCity_Movement_WalkInPlaceLeft::
@@ -843,134 +834,133 @@ PewterCity_Movement_WalkInPlaceLeft::
 	step_end
 
 Text_DreamEaterTeach::
-	.string "Yawn!\n"
-	.string "I must have dozed off in the sun.\p"
-	.string "I had this weird dream about\n"
-	.string "a DROWZEE eating my dream.\p"
-	.string "And…\n"
-	.string "I learned how to eat dreams…\p"
-	.string "Oogh, this is too spooky!\p"
-	.string "Let me teach it to a POKéMON so\n"
-	.string "I can forget about it!$"
+    .string "Yawn!\n"
+    .string "I must have dozed off in the sun.\p"
+    .string "I had this weird dream about\n"
+    .string "a Drowzee eating my dream.\p"
+    .string "And…\n"
+    .string "I learned how to eat dreams…\p"
+    .string "Oogh, this is too spooky!\p"
+    .string "Let me teach it to a Pokémon so\n"
+    .string "I can forget about it!$"
 
 Text_DreamEaterDeclined::
-	.string "…Snore…$"
+    .string "…Snore…$"
 
 Text_DreamEaterWhichMon::
-	.string "Which POKéMON wants to learn\n"
-	.string "DREAM EATER?$"
+    .string "Which Pokémon wants to learn\n"
+    .string "Dream Eater?$"
 
 Text_DreamEaterTaught::
-	.string "…ZZZ…\n"
-	.string "I…can't eat…anymore…$"
+    .string "…ZZZ…\n"
+    .string "I…can't eat…anymore…$"
 
 PewterCity_Text_ClefairyCameFromMoon::
-	.string "CLEFAIRY came from the moon.\n"
-	.string "That's what the rumor is.\p"
-	.string "They appeared after MOON STONES\n"
-	.string "fell on MT. MOON.$"
+    .string "Clefairy came from the moon.\n"
+    .string "That's what the rumor is.\p"
+    .string "They appeared after Moon Stones\n"
+    .string "fell on Mt. Moon.$"
 
 PewterCity_Text_BrockOnlySeriousTrainerHere::
-	.string "There aren't many serious POKéMON\n"
-	.string "TRAINERS here.\p"
-	.string "They're all like BUG CATCHERS,\n"
-	.string "you know, just hobbyists.\p"
-	.string "But PEWTER GYM's BROCK isn't like\n"
-	.string "that, not one bit.$"
+    .string "There aren't many serious Pokémon\n"
+    .string "Trainers here.\p"
+    .string "They're all like Bug Catchers,\n"
+    .string "you know, just hobbyists.\p"
+    .string "But Pewter Gym's Brock isn't like\n"
+    .string "that, not one bit.$"
 
 PewterCity_Text_DidYouCheckOutMuseum::
-	.string "Did you check out the MUSEUM?$"
+    .string "Did you check out the Museum?$"
 
 PewterCity_Text_WerentThoseFossilsAmazing::
-	.string "Weren't those fossils from MT. MOON\n"
-	.string "amazing?$"
+    .string "Weren't those fossils from Mt. Moon\n"
+    .string "amazing?$"
 
 PewterCity_Text_ReallyYouHaveToGo::
-	.string "Really?\n"
-	.string "You absolutely have to go!$"
+    .string "Really?\n"
+    .string "You absolutely have to go!$"
 
 PewterCity_Text_ThisIsTheMuseum::
-	.string "This is it, the MUSEUM.\p"
-	.string "You have to pay to get in, but it's\n"
-	.string "worth it. See you around!$"
+    .string "This is it, the Museum.\p"
+    .string "You have to pay to get in, but it's\n"
+    .string "worth it. See you around!$"
 
 PewterCity_Text_DoYouKnowWhatImDoing::
-	.string "Psssst!\n"
-	.string "Do you know what I'm doing?$"
+    .string "Psssst!\n"
+    .string "Do you know what I'm doing?$"
 
 PewterCity_Text_ThatsRightItsHardWork::
-	.string "That's right!\n"
-	.string "It's hard work!$"
+    .string "That's right!\n"
+    .string "It's hard work!$"
 
 PewterCity_Text_SprayingRepelToKeepWildMonsOut::
-	.string "I'm spraying REPEL to keep wild\n"
-	.string "POKéMON out of my garden!$"
+    .string "I'm spraying Repel to keep wild\n"
+    .string "Pokémon out of my garden!$"
 
 PewterCity_Text_BrocksLookingForChallengersFollowMe::
-	.string "You're a TRAINER, right?\p"
-	.string "BROCK's looking for new\n"
-	.string "challengers. Follow me!$"
+    .string "You're a Trainer, right?\p"
+    .string "Brock's looking for new\n"
+    .string "challengers. Follow me!$"
 
 PewterCity_Text_GoTakeOnBrock::
-	.string "If you have the right stuff,\n"
-	.string "go take on BROCK!$"
+    .string "If you have the right stuff,\n"
+    .string "go take on Brock!$"
 
 PewterCity_Text_TrainerTipsEarningEXP::
-	.string "TRAINER TIPS\p"
-	.string "All POKéMON that appear in battle,\n"
-	.string "however briefly, earn EXP Points.$"
+    .string "Trainer Tips\p"
+    .string "All Pokémon that appear in battle,\n"
+    .string "however briefly, earn EXP Points.$"
 
 PewterCity_Text_CallPoliceIfInfoOnThieves::
-	.string "NOTICE!\p"
-	.string "Thieves have been stealing POKéMON\n"
-	.string "fossils from MT. MOON.\p"
-	.string "Please call the PEWTER POLICE if\n"
-	.string "you have any information.$"
+    .string "NOTICE!\p"
+    .string "Thieves have been stealing Pokémon\n"
+    .string "fossils from Mt. Moon.\p"
+    .string "Please call the Pewter Police if\n"
+    .string "you have any information.$"
 
 PewterCity_Text_MuseumOfScience::
-	.string "PEWTER MUSEUM OF SCIENCE$"
+    .string "Pewter Museum of Science$"
 
 PewterCity_Text_GymSign::
-	.string "PEWTER CITY POKéMON GYM\n"
-	.string "LEADER: BROCK\l"
-	.string "The Rock-Solid POKéMON TRAINER!$"
+    .string "Pewter City Pokémon Gym\n"
+    .string "Leader: Brock\l"
+    .string "The Rock-Solid Pokémon Trainer!$"
 
 PewterCity_Text_CitySign::
-	.string "PEWTER CITY\n"
-	.string "A Stone Gray City$"
+    .string "Pewter City\n"
+    .string "A Stone Gray City$"
 
 PewterCity_Text_OhPlayer::
-	.string "Oh, {PLAYER}{KUN}!$"
+    .string "Oh, {PLAYER}{KUN}!$"
 
 PewterCity_Text_AskedToDeliverThis::
-	.string "I'm glad I caught up to you.\n"
-	.string "I'm PROF. OAK's AIDE.\p"
-	.string "I've been asked to deliver this,\n"
-	.string "so here you go.$"
+    .string "I'm glad I caught up to you.\n"
+    .string "I'm Prof. Oak's Aide.\p"
+    .string "I've been asked to deliver this,\n"
+    .string "so here you go.$"
 
 PewterCity_Text_ReceivedRunningShoesFromAide::
-	.string "{PLAYER} received the\n"
-	.string "RUNNING SHOES from the AIDE.$"
+    .string "{PLAYER} received the\n"
+    .string "Running Shoes from the Aide.$"
 
 PewterCity_Text_SwitchedShoesWithRunningShoes::
-	.string "{PLAYER} switched shoes with the\n"
-	.string "RUNNING SHOES.$"
+    .string "{PLAYER} switched shoes with the\n"
+    .string "Running Shoes.$"
 
 PewterCity_Text_ExplainRunningShoes::
-	.string "Press the B Button to run.\n"
-	.string "But only where there's room to run!$"
+    .string "Press the B Button to run.\n"
+    .string "But only where there's room to run!$"
 
 PewterCity_Text_MustBeGoingBackToLab::
-	.string "Well, I must be going back to\n"
-	.string "the LAB.\p"
-	.string "Bye-bye!$"
+    .string "Well, I must be going back to\n"
+    .string "the Lab.\p"
+    .string "Bye-bye!$"
 
 PewterCity_Text_RunningShoesLetterFromMom::
-	.string "There's a letter attached…\p"
-	.string "Dear {PLAYER},\p"
-	.string "Here is a pair of RUNNING SHOES\n"
-	.string "for my beloved challenger.\p"
-	.string "Remember, I'll always cheer for\n"
-	.string "you! Don't ever give up!\p"
-	.string "From Mom$"
-
+    .string "There's a letter attached…\p"
+    .string "Dear {PLAYER},\p"
+    .string "Here is a pair of Running Shoes\n"
+    .string "for my beloved challenger.\p"
+    .string "Remember, I'll always cheer for\n"
+    .string "you! Don't ever give up!\p"
+    .string "From Mom$"
