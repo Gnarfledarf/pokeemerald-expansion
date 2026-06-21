@@ -887,7 +887,7 @@ LittlerootTown_EventScript_Mom::
 
 LittlerootTown_EventScript_SetReceivedRunningShoes::
 	removeobject LOCALID_LITTLEROOT_MOM
-	setflag FLAG_SYS_B_DASH
+	setflag FLAG_AUTORUN_TOGGLE
 	setvar VAR_LITTLEROOT_TOWN_STATE, 4
 	release
 	end

@@ -1216,7 +1216,7 @@ static u32 Debug_CheckToggleFlags(u8 id)
         result = FlagGet(FLAG_ADDED_MATCH_CALL_TO_POKENAV) && FlagGet(FLAG_HAS_MATCH_CALL);
         break;
     case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_RUN_SHOES:
-        result = FlagGet(FLAG_SYS_B_DASH);
+        result = FlagGet(FLAG_AUTORUN_TOGGLE);
         break;
     case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_LOCATIONS:
         result = TRUE;
@@ -2488,11 +2488,11 @@ static void DebugAction_FlagsVars_SwitchMatchCall(u8 taskId)
 
 static void DebugAction_FlagsVars_RunningShoes(u8 taskId)
 {
-    if (FlagGet(FLAG_SYS_B_DASH))
+    if (FlagGet(FLAG_AUTORUN_TOGGLE))
         PlaySE(SE_PC_OFF);
     else
         PlaySE(SE_PC_LOGIN);
-    FlagToggle(FLAG_SYS_B_DASH);
+    FlagToggle(FLAG_AUTORUN_TOGGLE);
 }
 
 static void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId)

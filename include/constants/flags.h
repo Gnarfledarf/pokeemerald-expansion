@@ -1798,7 +1798,7 @@
 
 #define FLAG_HIDE_ROUTE2_ETHER                                  0
 #define FLAG_HIDE_ROUTE2_PARALYZE_HEAL                          0
-#define FLAG_HIDE_VIRIDIAN_FOREST_POKE_BALL                     0
+#define FLAG_HIDE_VIRIDIAN_FOREST_TM118                     0
 #define FLAG_HIDE_VIRIDIAN_FOREST_ANTIDOTE                      0
 #define FLAG_HIDE_VIRIDIAN_FOREST_POTION                        0
 #define FLAG_HIDE_MT_MOON_1F_PARALYZE_HEAL                      0
@@ -1923,12 +1923,12 @@
 #define FLAG_HIDE_POKEMON_TOWER_5F_CLEANSE_TAG                  0
 #define FLAG_HIDE_CELADON_CITY_ETHER                            0
 #define FLAG_HIDE_ROCKET_HIDEOUT_B3F_BLACK_GLASSES              0
-#define FLAG_HIDE_SAFARI_ZONE_NORTH_QUICK_CLAW                  0
+#define FLAG_HIDE_SAFARI_ZONE_NORTH_TM123                  0
 #define FLAG_HIDE_SEAFOAM_ISLANDS_1F_ICE_HEAL                   0
 #define FLAG_HIDE_SEAFOAM_ISLANDS_B1F_WATER_STONE               0
 #define FLAG_HIDE_SEAFOAM_ISLANDS_B1F_REVIVE                    0
 #define FLAG_HIDE_SEAFOAM_ISLANDS_B2F_BIG_PEARL                 0
-#define FLAG_HIDE_SEAFOAM_ISLANDS_B4F_ULTRA_BALL                0
+#define FLAG_HIDE_SEAFOAM_ISLANDS_B4F_TM113                0
 #define FLAG_HIDE_FOUR_ISLAND_STAR_PIECE                        0
 #define FLAG_HIDE_FOUR_ISLAND_STARDUST                          0
 #define FLAG_HIDE_ONE_ISLAND_KINDLE_ROAD_ETHER                  0
@@ -1947,7 +1947,7 @@
 #define FLAG_HIDE_SEVEN_ISLAND_SEVAULT_CANYON_MAX_ELIXIR        0
 #define FLAG_HIDE_SEVEN_ISLAND_SEVAULT_CANYON_NUGGET            0
 #define FLAG_HIDE_THREE_ISLAND_BERRY_FOREST_MAX_ETHER           0
-#define FLAG_HIDE_THREE_ISLAND_BERRY_FOREST_FULL_HEAL           0
+#define FLAG_HIDE_THREE_ISLAND_BERRY_FOREST_TM81           0
 #define FLAG_HIDE_THREE_ISLAND_BERRY_FOREST_MAX_ELIXIR          0
 #define FLAG_HIDE_MT_EMBER_EXTERIOR_ULTRA_BALL                  0
 #define FLAG_HIDE_MT_EMBER_EXTERIOR_FIRE_STONE                  0
@@ -1957,7 +1957,7 @@
 #define FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_B1F_FULL_RESTORE     0
 #define FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_B1F_NEVER_MELT_ICE   0
 #define FLAG_HIDE_FIVE_ISLAND_ROCKET_WAREHOUSE_BIG_PEARL        0
-#define FLAG_HIDE_FIVE_ISLAND_ROCKET_WAREHOUSE_TM36             0
+#define FLAG_HIDE_FIVE_ISLAND_ROCKET_WAREHOUSE_TM98             0
 #define FLAG_HIDE_FIVE_ISLAND_ROCKET_WAREHOUSE_PEARL            0
 #define FLAG_HIDE_FIVE_ISLAND_ROCKET_WAREHOUSE_UP_GRADE         0
 #define FLAG_HIDE_FIVE_ISLAND_LOST_CAVE_ROOM10_SILK_SCARF       0
@@ -2093,7 +2093,7 @@
 #define FLAG_FOUGHT_ARTICUNO                             0
 #define FLAG_FOUGHT_ZAPDOS                               0
 #define FLAG_TUTOR_DOUBLE_EDGE                           0
-#define FLAG_TUTOR_THUNDER_WAVE                          0
+#define FLAG_TUTOR_WATER_GUN                          0
 #define FLAG_TUTOR_ROCK_SLIDE                            0
 #define FLAG_TUTOR_EXPLOSION                             0
 #define FLAG_TUTOR_MEGA_PUNCH                            0
@@ -2185,7 +2185,7 @@
 #define FLAG_HIDDEN_ITEM_POWER_PLANT_MAX_ELIXIR                            0
 #define FLAG_HIDDEN_ITEM_POWER_PLANT_THUNDER_STONE                         0
 #define FLAG_HIDDEN_ITEM_SEAFOAM_ISLANDS_B3F_NUGGET                        0
-#define FLAG_HIDDEN_ITEM_SEAFOAM_ISLANDS_B4F_WATER_STONE                   0
+#define FLAG_HIDDEN_ITEM_SEAFOAM_ISLANDS_B4F_ICE_STONE                   0
 #define FLAG_HIDDEN_ITEM_POKEMON_MANSION_1F_MOON_STONE                     0
 #define FLAG_HIDDEN_ITEM_POKEMON_MANSION_3F_RARE_CANDY                     0
 #define FLAG_HIDDEN_ITEM_POKEMON_MANSION_B1F_ELIXIR                        0

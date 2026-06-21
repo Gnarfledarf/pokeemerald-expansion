@@ -27,7 +27,7 @@ Debug_CheatStart::
 	setflag FLAG_SYS_NATIONAL_DEX
 	special EnableNationalPokedex
 	setflag FLAG_RECEIVED_RUNNING_SHOES
-	setflag FLAG_SYS_B_DASH
+	setflag FLAG_AUTORUN_TOGGLE
 	setvar VAR_LITTLEROOT_TOWN_STATE, 4 @ 4: Received Running Shoes
 	setvar VAR_LITTLEROOT_INTRO_STATE, 7 @ 7: Told to go meet rival
 	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2 @ 2: Met Rival's Mom (and is corresponding gender)
@@ -91,7 +91,7 @@ Debug_CheatStartFrlg::
 	setvar VAR_MAP_SCENE_POKEMON_CENTER_TEALA, 1 @ end
 	setflag FLAG_SYS_NATIONAL_DEX
 	special EnableNationalPokedex
-	setflag FLAG_SYS_B_DASH
+	setflag FLAG_AUTORUN_TOGGLE
 	setflag FLAG_BADGE01_GET
 	setflag FLAG_BADGE02_GET
 	setflag FLAG_BADGE03_GET

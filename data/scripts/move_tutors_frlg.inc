@@ -32,7 +32,7 @@ EventScript_ThunderWaveTutor::
 	lock
 	faceplayer
 .if I_REUSABLE_TMS == FALSE
-	goto_if_set FLAG_TUTOR_THUNDER_WAVE, EventScript_ThunderWaveTaught
+	goto_if_set FLAG_TUTOR_WATER_GUN, EventScript_ThunderWaveTaught
 .endif
 	msgbox Text_ThunderWaveTeach, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_ThunderWaveDeclined
@@ -43,7 +43,7 @@ EventScript_ThunderWaveTutor::
 	call EventScript_ChooseMoveTutorMon
 	goto_if_eq VAR_RESULT, FALSE, EventScript_ThunderWaveDeclined
 .if I_REUSABLE_TMS == FALSE
-	setflag FLAG_TUTOR_THUNDER_WAVE
+	setflag FLAG_TUTOR_WATER_GUN
 .endif
 	goto EventScript_ThunderWaveTaught
 	end
