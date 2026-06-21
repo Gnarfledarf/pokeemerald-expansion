@@ -156,7 +156,7 @@ jobs:
 
       - name: Release
         env:
-          GAME_VERSION: EMERALD
+          GAME_VERSION: Firered
         run: make -j$(nproc) release
 
   test:
@@ -195,7 +195,7 @@ jobs:
 
       - name: Test
         env:
-          GAME_VERSION: EMERALD
+          GAME_VERSION: Firered
           TEST: 1
         run: make -j$(nproc) check
 
