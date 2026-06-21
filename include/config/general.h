@@ -68,20 +68,21 @@
 #define GEN_7 6
 #define GEN_8 7
 #define GEN_9 8
-#define GEN_COUNT 9
+#define GEN_CUSTOM  9
+#define GEN_COUNT   10
 // Changing GEN_LATEST's value to a different Generation will change every default setting that uses it at once.
 #define GEN_LATEST GEN_9
 
 // General settings
-#define EXPANSION_INTRO              TRUE    // If TRUE, a custom RHH intro will play after the vanilla copyright screen.
+#define EXPANSION_INTRO              FALSE    // If TRUE, a custom RHH intro will play after the vanilla copyright screen.
 #define PHONEMES_SHARED              FALSE   // If TRUE, bard phonemes all reference the same sound (sound/direct_sound_samples/phonemes/shared.bin) to save ROM space.
 
 // Measurement system constants to be used for UNITS
 #define UNITS_IMPERIAL               0       // Inches, feet, pounds
 #define UNITS_METRIC                 1       // meters, kilograms
 
-#define UNITS                        UNITS_IMPERIAL
-#define CHAR_DEC_SEPARATOR           CHAR_PERIOD // CHAR_PERIOD is used as a decimal separator only in the UK and the US. The rest of the world uses CHAR_COMMA.
+#define UNITS                        UNITS_METRIC
+#define CHAR_DEC_SEPARATOR           CHAR_COMMA // CHAR_PERIOD is used as a decimal separator only in the UK and the US. The rest of the world uses CHAR_COMMA.
 
 // Naming Screen
 #define AUTO_LOWERCASE_KEYBOARD      GEN_LATEST  // Starting in GEN_6, after entering the first uppercase character, the keyboard switches to lowercase letters.
