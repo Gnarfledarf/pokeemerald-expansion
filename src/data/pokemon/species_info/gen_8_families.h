@@ -5264,7 +5264,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_DEFIANT, ABILITY_DEFIANT, ABILITY_DEFIANT },
+        .abilities = { ABILITY_BATTLE_ARMOR, ABILITY_NONE, ABILITY_DEFIANT },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Falinks"),
     #if P_MODIFIED_MEGA_CRIES
@@ -7264,8 +7264,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sKubfuLevelUpLearnset,
         .teachableLearnset = sKubfuTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_SCRIPT_TRIGGER, EVO_TRIGGER_DARK_SCROLL, SPECIES_URSHIFU_SINGLE_STRIKE},
-                                {EVO_SCRIPT_TRIGGER, EVO_TRIGGER_WATER_SCROLL, SPECIES_URSHIFU_RAPID_STRIKE},
+        .evolutions = EVOLUTION({EVO_SCRIPT_TRIGGER, 0, SPECIES_URSHIFU_SINGLE_STRIKE},
+                                {EVO_SCRIPT_TRIGGER, 1, SPECIES_URSHIFU_RAPID_STRIKE},
                                 {EVO_ITEM, ITEM_SCROLL_OF_DARKNESS, SPECIES_URSHIFU_SINGLE_STRIKE},
                                 {EVO_ITEM, ITEM_SCROLL_OF_WATERS,   SPECIES_URSHIFU_RAPID_STRIKE}),
     },
@@ -8158,10 +8158,18 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 16,
         .weight = 480,
         .description = COMPOUND_STRING(
+        #ifdef FIRERED
             "Its arrival brings an end to the winter.\n"
             "According to legend, this Pokémon's love\n"
             "gives rise to the budding of fresh life\n"
-            "across the land."),
+            "across the land."
+        #else
+            "Its arrival brings an end to the winter.\n"
+            "According to legend, this Pokémon's love\n"
+            "gives rise to the budding of fresh life\n"
+            "across the land."
+        #endif
+        ),
         .pokemonScale = 259,
         .pokemonOffset = 1,
         .trainerScale = 296,
@@ -8226,10 +8234,18 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .height = 16,
         .weight = 480,
         .description = COMPOUND_STRING(
+        #ifdef FIRERED
             "From the clouds, it descends upon\n"
             "those who treat any form of life\n"
             "with disrespect and metes out\n"
-            "wrathful, ruthless punishment."),
+            "wrathful, ruthless punishment."
+        #else
+            "From the clouds, it descends upon\n"
+            "those who treat any form of life\n"
+            "with disrespect and metes out\n"
+            "wrathful, ruthless punishment."
+        #endif
+        ),
         .pokemonScale = 259,
         .pokemonOffset = 1,
         .trainerScale = 296,
