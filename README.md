@@ -51,3 +51,21 @@ If you are looking to [report a bug](CONTRIBUTING.md#Bug-Report), [open a pull r
 [![](https://dcbadge.limes.pink/api/server/6CzjAG6GZk)](https://discord.gg/6CzjAG6GZk)
 
 Our community uses the [ROM Hacking Hideout (RHH) Discord server](https://discord.gg/6CzjAG6GZk) to communicate and organize. Most of our discussions take place there, and we welcome anybody to join us!
+
+# Credits
+[rh-hideout/pokeemerald-expansion](https://github.com/rh-hideout/pokeemerald-expansion/wiki/Credits)
+[Sotomura/pokefirered-rtc](https://github.com/Sotomura/pokefirered/tree/pokefirered-rtc)
+[Lunos - overworld Headbutt](https://github.com/pret/pokeemerald/compare/master...LOuroboros:ow_headbutt)
+[Discord user properattire, channel "Rom Hacking Hideout" - Checking for specific caught species](https://discord.com/channels/419213663107416084/419214240277200898/1362252888348557373)
+[PokemonSanFran - qol field moves](https://github.com/PokemonSanFran/pokeemerald/wiki/QoL-Field-Moves)
+[Lunos - Gen 4 styled Deoxys form change in overworld](https://github.com/DizzyEggg/pokeemerald/compare/master...LOuroboros:pokeemerald:change_deoxys_form)
+[ghoulslash, AsparagusEduardo, Alex N - Repeated field medicine and Rare Candy use](https://github.com/pret/pokeemerald/wiki/Repeated-Field-Medicine-Use)
+[Mashanny - Make text speed up on fastest speed without holding A/B](https://www.pokecommunity.com/threads/simple-modifications-directory.416647/page-11#post-10266385)
+[Zeturic - Wrapping summary screen](https://www.pokecommunity.com/threads/simple-modifications-directory.416647/page-2#post-10060875)
+[Justin Zhu - Make ledge jumps check collision](https://github.com/pret/pokeemerald/wiki/Make-Ledge-Jumps-Check-Collision)
+[PCG - Time-based Pokémon Center nurse greetings](https://github.com/TeamAquasHideout/Team-Aquas-Asset-Repo/wiki/Time-based-Nurse-Joy-greetings)
+[Surskitty - Put random birds on the roofs of your towns](https://github.com/TeamAquasHideout/Team-Aquas-Asset-Repo/wiki/Put-random-birds-on-the-roofs-of-your-towns!)
+[Zeturic - Move items around in party screen](https://www.pokecommunity.com/threads/simple-modifications-directory.416647/page-3#post-10120157)
+    [Deokishisu - fix that prevents swapping mail between party members](https://www.pokecommunity.com/threads/simple-modifications-directory.416647/post-10517557)
+[Anon822 - Category icons in battle](https://www.pokecommunity.com/threads/simple-modifications-directory.416647/page-20#post-10527471)
+[doodles-hearth - Autorun toggle](https://github.com/doodles-hearth/pokemon-hearth/pull/239)
