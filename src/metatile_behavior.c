@@ -1825,3 +1825,35 @@ bool8 MetatileBehavior_IsTrainerTowerMonitor(u8 metatileBehavior)
         return FALSE;
 }
 
+
+bool8 MetatileBehavior_IsMeteoriteDeoxysNormal(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_METEORITE_DEOXYS_NORMAL)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsMeteoriteDeoxysAttack(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_METEORITE_DEOXYS_ATTACK)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsMeteoriteDeoxysDefense(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_METEORITE_DEOXYS_DEFENSE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsMeteoriteDeoxysSpeed(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_METEORITE_DEOXYS_SPEED)
+        return TRUE;
+    else
+        return FALSE;
+}

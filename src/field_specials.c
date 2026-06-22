@@ -12,6 +12,7 @@
 #include "diploma.h"
 #include "event_data.h"
 #include "event_object_movement.h"
+#include "event_scripts.h"
 #include "fieldmap.h"
 #include "field_camera.h"
 #include "field_effect.h"
@@ -20,6 +21,7 @@
 #include "field_screen_effect.h"
 #include "field_specials.h"
 #include "field_weather.h"
+#include "fldeff.h"
 #include "graphics.h"
 #include "international_string_util.h"
 #include "item.h"
@@ -68,6 +70,8 @@
 #include "constants/field_specials.h"
 #include "constants/items.h"
 #include "constants/heal_locations.h"
+#include "constants/metatile_behaviors.h"
+#include "constants/metatile_behaviors_frlg.h"
 #include "constants/mystery_gift.h"
 #include "constants/slot_machine.h"
 #include "constants/songs.h"
@@ -5780,6 +5784,48 @@ bool8 CheckAddCoins(void)
         return FALSE;
     else
         return TRUE;
+}
+// Changes a Deoxys' form if the following conditions are met:
+// -gSpecialVar_0x8004 is currently hosting a Deoxys form.
+// -The metatile behavior of the tile in front of the Player is MB_UNUSED_2C, MB_UNUSED_2D, MB_UNUSED_2E or MB_UNUSED_2F.
+// If these conditions aren't met, gSpecialVar_Result is set to FALSE meaning Deoxys' form didn't change.
+void TryChangeDeoxysForm(struct Pokemon *mon)
+{
+    enum Species currentSpecies = GetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_SPECIES);
+    u16 targetSpecies;
+
+    if (currentSpecies == SPECIES_DEOXYS
+     || currentSpecies == SPECIES_DEOXYS_ATTACK
+     || currentSpecies == SPECIES_DEOXYS_DEFENSE
+     || currentSpecies == SPECIES_DEOXYS_SPEED)
+    {
+        s16 x, y;
+        GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+        {
+            if (MapGridGetMetatileBehaviorAt(x, y) == MB_METEORITE_DEOXYS_NORMAL)
+            {
+                targetSpecies = SPECIES_DEOXYS;
+            }
+            else if (MapGridGetMetatileBehaviorAt(x, y) == MB_METEORITE_DEOXYS_ATTACK)
+            {
+                targetSpecies = SPECIES_DEOXYS_ATTACK;
+            }
+            else if (MapGridGetMetatileBehaviorAt(x, y) == MB_METEORITE_DEOXYS_DEFENSE)
+            {
+                targetSpecies = SPECIES_DEOXYS_DEFENSE;
+            }
+            else if (MapGridGetMetatileBehaviorAt(x, y) == MB_METEORITE_DEOXYS_SPEED)
+            {
+                targetSpecies = SPECIES_DEOXYS_SPEED;
+            }
+        }
+        SetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_SPECIES, &targetSpecies);
+        CalculateMonStats(mon);
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+
+    gSpecialVar_Result = FALSE;
 }
 
 #define MAX_BIRD_SPOTS 10
