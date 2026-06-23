@@ -753,8 +753,8 @@
 #define FLAG_OAKS_RATING_IS_VIA_PC                       0x2FF
 
 // Unused?
-#define FLAG_HIDE_FIVE_ISLAND_MEADOW_SUDOWOODO                 0x300
-#define FLAG_DEFEATED_FIVE_ISLAND_MEADOW_SUDOWOODO                  0x301
+#define FLAG_HIDE_FIVE_ISLAND_MEADOW_SUDOWOODO           0x300
+#define FLAG_DEFEATED_FIVE_ISLAND_MEADOW_SUDOWOODO       0x301
 #define FLAG_0x302               0x302
 #define FLAG_0x303               0x303
 #define FLAG_0x304               0x304

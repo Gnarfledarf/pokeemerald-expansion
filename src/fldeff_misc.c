@@ -19,6 +19,7 @@
 #include "event_object_movement.h"
 #include "metatile_behavior.h"
 #include "string_util.h"
+#include "constants/event_objects.h"
 #include "constants/field_effects.h"
 #include "constants/metatile_behaviors.h"
 #include "constants/metatile_labels.h"
@@ -1351,19 +1352,35 @@ bool8 FldEff_UseHeadbutt(void)
     return FALSE;
 }
 
+static void FieldCallback_HeadbuttSudowoodo(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    ScriptContext_SetupScript(FiveIsland_Meadow_EventScript_HeadbuttTree_Sudowoodo);
+}
+
 // Called when Headbutt is used from the party menu
 // For interacting with a headbuttable tree in the field, see EventScript_Headbutt
 bool32 SetUpFieldMove_Headbutt(void)
 {
-    GetXYCoordsOneStepInFrontOfPlayer(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
-    if (MapGridGetMetatileBehaviorAt(gPlayerFacingPosition.x, gPlayerFacingPosition.y) == MB_HEADBUTT)
+    s16 x, y;
+    u8 elevation;
+    u8 objId;
+    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+    elevation = PlayerGetElevation();
+    objId = GetObjectEventIdByPosition(x, y, elevation);
+    if (MapGridGetMetatileBehaviorAt(x, y) == MB_HEADBUTT)
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
         gPostMenuFieldCallback = FieldCallback_Headbutt;
         return TRUE;
     }
-    else
+    else if (gObjectEvents[objId].graphicsId == OBJ_EVENT_GFX_SUDOWOODO
+     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_FIVE_ISLAND_MEADOW)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_FIVE_ISLAND_MEADOW))
     {
-        return FALSE;
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = FieldCallback_HeadbuttSudowoodo;
+        return TRUE;
     }
+        return FALSE;
 }
