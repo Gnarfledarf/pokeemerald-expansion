@@ -1,5 +1,6 @@
 #include "global.h"
 #include "gpu_regs.h"
+#include "overworld.h"
 #include "palette.h"
 #include "script.h"
 #include "sound.h"
@@ -1323,5 +1324,46 @@ void DestroyRecordMixingLights(void)
             FreeSpritePalette(&gSprites[i]);
             DestroySprite(&gSprites[i]);
         }
+    }
+}
+
+// The important part is handled by EventScript_Headbutt
+static void FieldMove_Headbutt(void)
+{
+    PlaySE(SE_NOT_EFFECTIVE);
+    FieldEffectActiveListRemove(FLDEFF_USE_HEADBUTT);
+    ScriptContext_Enable();
+}
+
+static void FieldCallback_Headbutt(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    ScriptContext_SetupScript(EventScript_UseHeadbutt);
+}
+
+bool8 FldEff_UseHeadbutt(void)
+{
+    u8 taskId = CreateFieldMoveTask();
+
+    gTasks[taskId].data[8] = (u32)FieldMove_Headbutt >> 16;
+    gTasks[taskId].data[9] = (u32)FieldMove_Headbutt;
+    IncrementGameStat(GAME_STAT_USED_HEADBUTT);
+    return FALSE;
+}
+
+// Called when Headbutt is used from the party menu
+// For interacting with a headbuttable tree in the field, see EventScript_Headbutt
+bool32 SetUpFieldMove_Headbutt(void)
+{
+    GetXYCoordsOneStepInFrontOfPlayer(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
+    if (MapGridGetMetatileBehaviorAt(gPlayerFacingPosition.x, gPlayerFacingPosition.y) == MB_HEADBUTT)
+    {
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = FieldCallback_Headbutt;
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
     }
 }

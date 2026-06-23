@@ -632,8 +632,8 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
             CheckInteractedWithFriendsFurnitureTop();
             return NULL;
         }
-        //if (MetatileBehavior_IsHeadbuttTree(metatileBehavior) == TRUE)
-        //    return EventScript_Headbutt;
+        if (MetatileBehavior_IsHeadbuttTree(metatileBehavior) == TRUE)
+            return EventScript_Headbutt;
         if (MetatileBehavior_IsMeteoriteDeoxysNormal(metatileBehavior) == TRUE)
             return EventScript_ChangeDeoxysForm;
         if (MetatileBehavior_IsMeteoriteDeoxysAttack(metatileBehavior) == TRUE)

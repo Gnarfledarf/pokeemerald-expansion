@@ -639,5 +639,6 @@ gSpecials::
 	def_special UpdateTrainerCardPhotoIcons
 	def_special StickerManGetBragFlags
 	def_special CheckAddCoins
+	def_special HeadbuttWildEncounter
 	def_special TryChangeDeoxysForm
 	def_special SetRoofBirds

@@ -1825,6 +1825,13 @@ bool8 MetatileBehavior_IsTrainerTowerMonitor(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsHeadbuttTree(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_HEADBUTT)
+        return TRUE;
+    else
+        return FALSE;
+}
 
 bool8 MetatileBehavior_IsMeteoriteDeoxysNormal(u8 metatileBehavior)
 {

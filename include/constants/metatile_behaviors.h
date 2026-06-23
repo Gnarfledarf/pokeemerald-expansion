@@ -6,7 +6,7 @@ enum {
     MB_SECRET_BASE_WALL,
     MB_TALL_GRASS,
     MB_LONG_GRASS,
-    MB_HEADBUTT,
+    MB_HEADBUTT, // Only commenting so that this appears in the commit 😳
     MB_UNUSED_05,
     MB_DEEP_SAND,
     MB_SHORT_GRASS,
