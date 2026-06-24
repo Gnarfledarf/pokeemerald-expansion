@@ -28,36 +28,6 @@ EventScript_DoubleEdgeTaught::
 	release
 	end
 
-EventScript_ThunderWaveTutor::
-	lock
-	faceplayer
-.if I_REUSABLE_TMS == FALSE
-	goto_if_set FLAG_TUTOR_WATER_GUN, EventScript_ThunderWaveTaught
-.endif
-	msgbox Text_ThunderWaveTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_ThunderWaveDeclined
-	call EventScript_CanOnlyBeLearnedOnce
-	goto_if_eq VAR_RESULT, NO, EventScript_ThunderWaveDeclined
-	msgbox Text_ThunderWaveWhichMon
-	setvar VAR_0x8005, MOVE_THUNDER_WAVE
-	call EventScript_ChooseMoveTutorMon
-	goto_if_eq VAR_RESULT, FALSE, EventScript_ThunderWaveDeclined
-.if I_REUSABLE_TMS == FALSE
-	setflag FLAG_TUTOR_WATER_GUN
-.endif
-	goto EventScript_ThunderWaveTaught
-	end
-
-EventScript_ThunderWaveDeclined::
-	msgbox Text_ThunderWaveDeclined
-	release
-	end
-
-EventScript_ThunderWaveTaught::
-	msgbox Text_ThunderWaveTaught
-	release
-	end
-
 RockTunnel_B1F_EventScript_RockSlideTutor::
 	lock
 	faceplayer
