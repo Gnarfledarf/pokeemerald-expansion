@@ -100,6 +100,7 @@ Debug_CheatStartFrlg::
 	setflag FLAG_BADGE06_GET
 	setflag FLAG_BADGE07_GET
 	setflag FLAG_BADGE08_GET
+	setvar VAR_BADGE_COUNT, 8
 	setflag FLAG_GOT_BIKE_VOUCHER
 	setflag FLAG_GOT_BICYCLE
 	additem ITEM_BICYCLE

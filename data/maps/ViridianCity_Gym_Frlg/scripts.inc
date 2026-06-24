@@ -18,6 +18,7 @@ ViridianCity_Gym_EventScript_DefeatedGiovanni::
 	setflag FLAG_HIDE_MISC_KANTO_ROCKETS
 	setflag FLAG_DEFEATED_LEADER_GIOVANNI
 	setflag FLAG_BADGE08_GET
+	addvar VAR_BADGE_COUNT, 1
 	setvar VAR_MAP_SCENE_ROUTE22, 3
 	set_gym_trainers_frlg 8
 	goto ViridianCity_Gym_EventScript_GiveTM26
