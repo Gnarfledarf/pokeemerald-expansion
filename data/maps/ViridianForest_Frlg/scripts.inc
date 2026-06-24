@@ -38,6 +38,7 @@ ViridianForest_EventScript_ExitSign::
 	msgbox ViridianForest_Text_LeavingViridianForest, MSGBOX_SIGN
 	end
 
+@todo: Replace Bug Catcher Colton with Bug Catcher Rick
 ViridianForest_EventScript_Rick::
 	trainerbattle_single TRAINER_BUG_CATCHER_RICK, ViridianForest_Text_RickIntro, ViridianForest_Text_RickDefeat
 	msgbox ViridianForest_Text_RickPostBattle, MSGBOX_AUTOCLOSE
@@ -50,7 +51,48 @@ ViridianForest_EventScript_Doug::
 
 ViridianForest_EventScript_Sammy::
 	trainerbattle_single TRAINER_BUG_CATCHER_SAMMY, ViridianForest_Text_SammyIntro, ViridianForest_Text_SammyDefeat
+	goto_if_set FLAG_GOT_NET_BALL_IN_VIRIDIAN_FOREST, ViridianForest_EventScript_Sammy_NetBallExplanation
+	goto_if_unset FLAG_GOT_NET_BALL_IN_VIRIDIAN_FOREST, ViridianForest_EventScript_Sammy_CheckIfFoundItem
 	msgbox ViridianForest_Text_SammyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+ViridianForest_EventScript_Sammy_CheckIfFoundItem::
+	goto_if_set FLAG_HIDDEN_ITEM_VIRIDIAN_FOREST_POTION, ViridianForest_EventScript_Sammy_FoundItem
+	msgbox ViridianForest_Text_SammyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+ViridianForest_EventScript_Sammy_FoundItem::
+	checkitem ITEM_POTION, 1
+	msgbox ViridianForest_Text_SammyPostBattle, MSGBOX_DEFAULT
+	goto_if_ge VAR_RESULT, TRUE, ViridianForest_EventScript_Sammy_ReturnLostItem
+	end
+
+ViridianForest_EventScript_Sammy_ReturnLostItem::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox ViridianForest_Text_Sammy_FoundItem, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, ViridianForest_EventScript_Sammy_ReturnedLostItem
+	closemessage
+	end
+
+ViridianForest_EventScript_Sammy_ReturnedLostItem::
+	removeitem ITEM_POTION
+	msgbox ViridianForest_Text_Sammy_GaveItemBack
+	closemessage
+	call EventScript_RestorePrevTextColor
+	msgbox ViridianForest_Text_Sammy_ThankYouSoMuch, MSGBOX_DEFAULT
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	checkitemspace ITEM_NET_BALL
+	goto_if_eq VAR_RESULT, FALSE, EventScript_BagIsFull
+	giveitem ITEM_NET_BALL, 1
+	goto_if_eq VAR_RESULT, FALSE, EventScript_NoRoomForItem
+	setflag FLAG_GOT_NET_BALL_IN_VIRIDIAN_FOREST
+	goto ViridianForest_EventScript_Sammy_NetBallExplanation
+	release
+	end
+
+ViridianForest_EventScript_Sammy_NetBallExplanation::
+	textcolor NPC_TEXT_COLOR_DEFAULT
+	msgbox ViridianForest_Text_Sammy_NetBallExplanation, MSGBOX_AUTOCLOSE
 	end
 
 ViridianForest_EventScript_Anthony::
@@ -63,108 +105,234 @@ ViridianForest_EventScript_Charlie::
 	msgbox ViridianForest_Text_CharliePostBattle, MSGBOX_AUTOCLOSE
 	end
 
+ViridianForest_EventScript_Boy2::
+	faceplayer
+	goto_if_set FLAG_GOT_SILVER_POWDER_IN_VIRIDIAN_FOREST, ViridianForest_EventScript_Boy2_GotSilverPowder
+#ifdef FIRERED
+	check_if_species_caught SPECIES_BEEDRILL
+	goto_if_eq VAR_RESULT, TRUE, ViridianForest_EventScript_Boy2_CaughtBeedrill
+	msgbox ViridianForest_Text_IloveBeedrill
+#else
+#ifdef LEAFGREEN
+	check_if_species_caught SPECIES_BUTTERFREE
+	goto_if_eq VAR_RESULT, TRUE, ViridianForest_EventScript_Boy2_CaughtButterfree
+	msgbox ViridianForest_Text_IloveButterfree
+#endif
+#endif
+	release
+	end
+
+ViridianForest_EventScript_Boy2_CaughtBeedrill::
+	msgbox ViridianForest_Text_ShowMeBeedrill, MSGBOX_NPC
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	checkitemspace ITEM_SILVER_POWDER
+	goto_if_eq VAR_RESULT, FALSE, EventScript_BagIsFull
+	bufferitemname STR_VAR_2, ITEM_SILVER_POWDER
+	playfanfare MUS_LEVEL_UP
+	message gText_ObtainedTheItem
+	waitmessage
+	waitfanfare
+	additem ITEM_SILVER_POWDER
+	msgbox ViridianForest_Text_SilverPowderAway
+	call EventScript_RestorePrevTextColor
+	setflag FLAG_GOT_SILVER_POWDER_IN_VIRIDIAN_FOREST
+	msgbox ViridianForest_Text_SilverPowder, MSGBOX_NPC
+	release
+	end
+
+ViridianForest_EventScript_Boy2_CaughtButterfree::
+	msgbox ViridianForest_Text_ShowMeButterfree, MSGBOX_NPC
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	checkitemspace ITEM_SILVER_POWDER
+	goto_if_eq VAR_RESULT, FALSE, EventScript_BagIsFull
+	bufferitemname STR_VAR_2, ITEM_SILVER_POWDER
+	playfanfare MUS_LEVEL_UP
+	message gText_ObtainedTheItem
+	waitmessage
+	waitfanfare
+	additem ITEM_SILVER_POWDER
+	msgbox ViridianForest_Text_SilverPowderAway
+	call EventScript_RestorePrevTextColor
+	setflag FLAG_GOT_SILVER_POWDER_IN_VIRIDIAN_FOREST
+	msgbox ViridianForest_Text_SilverPowder, MSGBOX_NPC
+	release
+	end
+
+ViridianForest_EventScript_Boy2_GotSilverPowder::
+	msgbox ViridianForest_Text_BugsEvolveEarly, MSGBOX_NPC
+	release
+	end
+
 ViridianForest_Text_FriendsItchingToBattle::
-	.string "I came here with some friends to\n"
-	.string "catch us some BUG POKéMON!\p"
-	.string "They're all itching to get into\n"
-	.string "some POKéMON battles!$"
+    .string "I came here with some friends to\n"
+    .string "catch us some Bug Pokémon!\p"
+    .string "They're all itching to get into\n"
+    .string "some Pokémon battles!$"
 
 ViridianForest_Text_RickIntro::
-	.string "Hey! You have POKéMON!\n"
-	.string "Come on!\l"
-	.string "Let's battle 'em!$"
+    .string "Hey! You have Pokémon!\n"
+    .string "Come on!\l"
+    .string "Let's battle 'em!$"
 
 ViridianForest_Text_RickDefeat::
-	.string "No!\nCATERPIE can't hack it!$"
+    .string "No!\nCaterpie can't hack it!$"
 
 ViridianForest_Text_RickPostBattle::
-	.string "Ssh! You'll scare the bugs away.\n"
-	.string "Another time, okay?$"
+    .string "Ssh! You'll scare the bugs away.\n"
+    .string "Another time, okay?$"
 
 ViridianForest_Text_DougIntro::
-	.string "Yo!\n"
-	.string "You can't jam out if you're a\l"
-	.string "POKéMON TRAINER!$"
+    .string "Yo!\n"
+    .string "You can't jam out if you're a\l"
+    .string "Pokémon Trainer!$"
 
 ViridianForest_Text_DougDefeat::
-	.string "Huh?\n"
-	.string "I ran out of POKéMON!$"
+    .string "Huh?\n"
+    .string "I ran out of Pokémon!$"
 
 ViridianForest_Text_DougPostBattle::
-	.string "That totally stinks! I'm going to\n"
-	.string "catch some stronger ones!$"
+    .string "That totally stinks! I'm going to\n"
+    .string "catch some stronger ones!$"
 
 ViridianForest_Text_SammyIntro::
-	.string "Hey, wait up!\n"
-	.string "What's the hurry? Why the rush?$"
+    .string "Hey, wait up!\n"
+    .string "What's the hurry? Why the rush?$"
 
 ViridianForest_Text_SammyDefeat::
-	.string "I give!\n"
-	.string "You're good at this!$"
+    .string "I give!\n"
+    .string "You're good at this!$"
 
 ViridianForest_Text_SammyPostBattle::
-	.string "Sometimes, you can find stuff on\n"
-	.string "the ground.\p"
-	.string "I'm looking for the stuff I\n"
-	.string "dropped. Can you help me?$"
+    .string "Sometimes, you can find stuff on\n"
+    .string "the ground.\p"
+    .string "I'm looking for the stuff I\n"
+    .string "dropped. Can you help me?$"
+
+ViridianForest_Text_Sammy_FoundItem::
+    .string "Return the lost item?$"
+
+ViridianForest_Text_Sammy_GaveItemBack::
+    .string "You returned the lost Potion\n"
+    .string "to the boy.$"
+
+ViridianForest_Text_Sammy_ThankYouSoMuch::
+    .string "Yes, that's my Potion!\n"
+    .string "Thank you so much!$"
+
+ViridianForest_Text_Sammy_NetBallExplanation::
+    .string "A Net Ball lets you catch bugs\n"
+    .string "no problem!\p"
+    .string "It's perfect for a Bug Catcher!$"
 
 ViridianForest_Text_AnthonyIntro::
-	.string "I might be little, but I won't like\n"
-	.string "it if you go easy on me!$"
+    .string "I might be little, but I won't like\n"
+    .string "it if you go easy on me!$"
 
 ViridianForest_Text_AnthonyDefeat::
-	.string "Oh, boo.\n"
-	.string "Nothing went right.$"
+    .string "Oh, boo.\n"
+    .string "Nothing went right.$"
 
 ViridianForest_Text_AnthonyPostBattle::
-	.string "I lost some of my allowance…$"
+    .string "I lost some of my allowance…$"
 
 ViridianForest_Text_CharlieIntro::
-	.string "Did you know that POKéMON evolve?$"
+    .string "Did you know that Pokémon evolve?$"
 
 ViridianForest_Text_CharlieDefeat::
-	.string "Oh!\n"
-	.string "I lost!$"
+    .string "Oh!\n"
+    .string "I lost!$"
 
 ViridianForest_Text_CharliePostBattle::
-	.string "BUG POKéMON evolve quickly.\n"
-	.string "They're a lot of fun!$"
+    .string "Bug Pokémon evolve quickly.\n"
+    .string "They're a lot of fun!$"
 
 ViridianForest_Text_RanOutOfPokeBalls::
-	.string "I was throwing POKé BALLS to\n"
-	.string "catch POKéMON, and I ran out.\p"
-	.string "That's why you can never have too\n"
-	.string "many POKé BALLS.$"
+    .string "I was throwing Poké Balls to\n"
+    .string "catch Pokémon, and I ran out.\p"
+    .string "That's why you can never have too\n"
+    .string "many Poké Balls.$"
 
 ViridianForest_Text_AvoidGrassyAreasWhenWeak::
-	.string "TRAINER TIPS\p"
-	.string "If your POKéMON are weak and you\n"
-	.string "want to avoid battles, stay away\l"
-	.string "from grassy areas!$"
+    .string "Trainer Tips\p"
+    .string "If your Pokémon are weak and you\n"
+    .string "want to avoid battles, stay away\l"
+    .string "from grassy areas!$"
 
 ViridianForest_Text_UseAntidoteForPoison::
-	.string "For poison, use ANTIDOTE!\n"
-	.string "Get it at POKéMON MARTS!$"
+    .string "For poison, use Antidote!\n"
+    .string "Get it at Pokémon Marts!$"
 
 ViridianForest_Text_ContactOakViaPCToRatePokedex::
-	.string "TRAINER TIPS\p"
-	.string "Contact PROF. OAK via a PC to\n"
-	.string "get your POKéDEX evaluated!$"
+    .string "Trainer Tips\p"
+    .string "Contact Prof. Oak via a PC to\n"
+    .string "get your Pokédex evaluated!$"
 
 ViridianForest_Text_CantCatchOwnedMons::
-	.string "TRAINER TIPS\p"
-	.string "You can't catch a POKéMON that\n"
-	.string "belongs to someone else.\p"
-	.string "Throw POKé BALLS only at wild\n"
-	.string "POKéMON to catch them!$"
+    .string "Trainer Tips\p"
+    .string "You can't catch a Pokémon that\n"
+    .string "belongs to someone else.\p"
+    .string "Throw Poké Balls only at wild\n"
+    .string "Pokémon to catch them!$"
 
 ViridianForest_Text_WeakenMonsBeforeCapture::
-	.string "TRAINER TIPS\p"
-	.string "Weaken POKéMON before attempting\n"
-	.string "capture!\p"
-	.string "When healthy, they may escape!$"
+    .string "Trainer Tips\p"
+    .string "Weaken Pokémon before attempting\n"
+    .string "capture!\p"
+    .string "When healthy, they may escape!$"
 
 ViridianForest_Text_LeavingViridianForest::
-	.string "LEAVING VIRIDIAN FOREST\n"
-	.string "PEWTER CITY AHEAD$"
+    .string "Leaving Viridian Forest\n"
+    .string "Pewter City Ahead$"
 
+ViridianForest_Text_IloveBeedrill::
+    .string "I love bugs! They evolve early,\n"
+    .string "so they get more powerful early!\l"
+    .string "My favorite is Beedrill!\p"
+    .string "Oh, you have a Pokédex? Does it\n"
+    .string "have info about Beedrill?\l"
+    .string "If it does, please show me!$"
+
+ViridianForest_Text_ShowMeBeedrill::
+    .string "I love bugs! They evolve early,\n"
+    .string "so they get more powerful early!\l"
+    .string "My favorite is Beedrill!\p"
+    .string "Oh, you have a Pokédex? And\n"
+    .string "it has info about Beedrill?\l"
+    .string "Show me! Show me!\p"
+    .string "………\n"
+    .string "I see…\p"
+    .string "Thank you so much! Take this!$"
+
+ViridianForest_Text_IloveButterfree::
+    .string "I love bugs! They evolve early,\n"
+    .string "so they get more powerful early!\l"
+    .string "My favorite is Butterfree!\p"
+    .string "Oh, you have a Pokédex? Does it\n"
+    .string "have info about Butterfree?\l"
+    .string "If it does, please show me!$"
+
+ViridianForest_Text_ShowMeButterfree::
+    .string "I love bugs! They evolve early,\n"
+    .string "so they get more powerful early!\l"
+    .string "My favorite is Butterfree!\p"
+    .string "Oh, you have a Pokédex? And\n"
+    .string "it has info about Butterfree?\l"
+    .string "Show me! Show me!\p"
+    .string "………\n"
+    .string "I see…\p"
+    .string "Thank you so much! Take this!$"
+
+ViridianForest_Text_SilverPowderAway::
+    .string "{PLAYER} put the Silver Powder away in\n"
+    .string "the Bag's Items Pocket.$"
+
+ViridianForest_Text_SilverPowder::
+    .string "Give this a Pokémon to hold,\n"
+    .string "and it'll make Bug-type attacks\l"
+    .string "more powerful!$"
+
+ViridianForest_Text_BugsEvolveEarly::
+    .string "I love bugs! They evolve early,\n"
+    .string "so they get more powerful early!\l"
+    .string "But they struggle to catch up to\l"
+    .string "other evolved Pokémon.$"

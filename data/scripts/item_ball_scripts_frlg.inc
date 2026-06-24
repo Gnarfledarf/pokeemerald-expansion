@@ -6,8 +6,9 @@ Route2_EventScript_ItemParalyzeHeal::
 	finditem ITEM_PARALYZE_HEAL
 	end
 
-ViridianForest_EventScript_ItemPokeBall::
-	finditem ITEM_POKE_BALL
+@TM Infestation
+ViridianForest_EventScript_ItemTM118::
+	finditem ITEM_TM118
 	end
 
 ViridianForest_EventScript_ItemAntidote::
