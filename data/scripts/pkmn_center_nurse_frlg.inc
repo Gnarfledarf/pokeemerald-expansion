@@ -12,7 +12,97 @@ EventScript_AfterWhiteOutHeal_Frlg::
 	end
 
 EventScript_PkmnCenterNurse_Frlg::
-	message Text_WelcomeWantToHealPkmn_Frlg
+@ goto_if_questlog EventScript_ReleaseEnd
+	goto_if_set FLAG_SYS_GAME_CLEAR, EventScript_PkmnCenterNurse_Champ_Frlg
+	gettime
+	switch VAR_0x8003
+	case 0, EventScript_PkmnCenterNurse_NurseIntro_Morning_Frlg
+	case 1, EventScript_PkmnCenterNurse_NurseIntro_Day_Frlg
+	case 2, EventScript_PkmnCenterNurse_NurseIntro_Evening_Frlg
+	case 3, EventScript_PkmnCenterNurse_NurseIntro_Night_Frlg
+	end
+
+EventScript_PkmnCenterNurse_Champ_Frlg::
+	gettime
+	switch VAR_0x8003
+	case 0, EventScript_PkmnCenterNurse_NurseIntro_Champ_Morning_Frlg
+	case 1, EventScript_PkmnCenterNurse_NurseIntro_Champ_Day_Frlg
+	case 2, EventScript_PkmnCenterNurse_NurseIntro_Champ_Evening_Frlg
+	case 3, EventScript_PkmnCenterNurse_NurseIntro_Champ_Night_Frlg
+	end
+
+EventScript_PkmnCenterNurse_NurseIntro_Morning_Frlg::
+	message Text_WelcomeWantToHealPkmn_Morning_Frlg
+	waitmessage
+	multichoice 19, 8, MULTI_YESNO, FALSE | (TRUE << 1)
+	switch VAR_RESULT
+	case 0, EventScript_PkmnCenterNurse_HealPkmn_Frlg
+	case 1 EventScript_PkmnCenterNurse_Goodbye_Frlg
+	case MULTI_B_PRESSED, EventScript_PkmnCenterNurse_Goodbye_Frlg
+	end
+
+EventScript_PkmnCenterNurse_NurseIntro_Day_Frlg::
+	message Text_WelcomeWantToHealPkmn_Day_Frlg
+	waitmessage
+	multichoice 19, 8, MULTI_YESNO, FALSE | (TRUE << 1)
+	switch VAR_RESULT
+	case 0, EventScript_PkmnCenterNurse_HealPkmn_Frlg
+	case 1 EventScript_PkmnCenterNurse_Goodbye_Frlg
+	case MULTI_B_PRESSED, EventScript_PkmnCenterNurse_Goodbye_Frlg
+	end
+
+EventScript_PkmnCenterNurse_NurseIntro_Evening_Frlg::
+	message Text_WelcomeWantToHealPkmn_Evening_Frlg
+	waitmessage
+	multichoice 19, 8, MULTI_YESNO, FALSE | (TRUE << 1)
+	switch VAR_RESULT
+	case 0, EventScript_PkmnCenterNurse_HealPkmn_Frlg
+	case 1 EventScript_PkmnCenterNurse_Goodbye_Frlg
+	case MULTI_B_PRESSED, EventScript_PkmnCenterNurse_Goodbye_Frlg
+	end
+
+EventScript_PkmnCenterNurse_NurseIntro_Night_Frlg::
+	message Text_WelcomeWantToHealPkmn_Night_Frlg
+	waitmessage
+	multichoice 19, 8, MULTI_YESNO, FALSE | (TRUE << 1)
+	switch VAR_RESULT
+	case 0, EventScript_PkmnCenterNurse_HealPkmn_Frlg
+	case 1 EventScript_PkmnCenterNurse_Goodbye_Frlg
+	case MULTI_B_PRESSED, EventScript_PkmnCenterNurse_Goodbye_Frlg
+	end
+
+EventScript_PkmnCenterNurse_NurseIntro_Champ_Morning_Frlg::
+	message Text_WelcomeWantToHealPkmn_Champ_Morning_Frlg
+	waitmessage
+	multichoice 19, 8, MULTI_YESNO, FALSE | (TRUE << 1)
+	switch VAR_RESULT
+	case 0, EventScript_PkmnCenterNurse_HealPkmn_Frlg
+	case 1 EventScript_PkmnCenterNurse_Goodbye_Frlg
+	case MULTI_B_PRESSED, EventScript_PkmnCenterNurse_Goodbye_Frlg
+	end
+
+EventScript_PkmnCenterNurse_NurseIntro_Champ_Day_Frlg::
+	message Text_WelcomeWantToHealPkmn_Champ_Day_Frlg
+	waitmessage
+	multichoice 19, 8, MULTI_YESNO, FALSE | (TRUE << 1)
+	switch VAR_RESULT
+	case 0, EventScript_PkmnCenterNurse_HealPkmn_Frlg
+	case 1 EventScript_PkmnCenterNurse_Goodbye_Frlg
+	case MULTI_B_PRESSED, EventScript_PkmnCenterNurse_Goodbye_Frlg
+	end
+
+EventScript_PkmnCenterNurse_NurseIntro_Champ_Evening_Frlg::
+	message Text_WelcomeWantToHealPkmn_Champ_Evening_Frlg
+	waitmessage
+	multichoice 19, 8, MULTI_YESNO, FALSE | (TRUE << 1)
+	switch VAR_RESULT
+	case 0, EventScript_PkmnCenterNurse_HealPkmn_Frlg
+	case 1 EventScript_PkmnCenterNurse_Goodbye_Frlg
+	case MULTI_B_PRESSED, EventScript_PkmnCenterNurse_Goodbye_Frlg
+	end
+
+EventScript_PkmnCenterNurse_NurseIntro_Champ_Night_Frlg::
+	message Text_WelcomeWantToHealPkmn_Champ_Night_Frlg
 	waitmessage
 	multichoice 19, 8, MULTI_YESNO, FALSE | (TRUE << 1)
 	switch VAR_RESULT
@@ -26,6 +116,7 @@ EventScript_PkmnCenterNurse_HealPkmn_Frlg::
 	message Text_TakeYourPkmnForFewSeconds_Frlg
 	waitmessage
 	call EventScript_PkmnCenterNurse_TakeAndHealPkmn_Frlg
+	@ special SetUsedPkmnCenterQuestLogEvent
 	goto EventScript_PkmnCenterNurse_CheckTrainerTowerAndUnionRoom_Frlg
 	end
 
@@ -76,13 +167,56 @@ Movement_Bow::
 	delay_4
 	step_end
 
-Text_WelcomeWantToHealPkmn_Frlg::
-	.string "Welcome to our POKéMON CENTER!\p"
+Text_WelcomeWantToHealPkmn_Morning_Frlg::
+	.string "Good morning! Welcome to our\n"
+	.string "Pokémon Center.\p"
 	.string "Would you like me to heal your\n"
-	.string "POKéMON back to perfect health?$"
+	.string "Pokémon back to perfect health?$"
+
+Text_WelcomeWantToHealPkmn_Day_Frlg::
+	.string "Hello, and welcome to our\n"
+	.string "Pokémon Center.\p"
+	.string "Would you like me to heal your\n"
+	.string "Pokémon back to perfect health?$"
+
+Text_WelcomeWantToHealPkmn_Evening_Frlg::
+	.string "Good evening! Welcome to our\n"
+	.string "Pokémon Center.\p"
+	.string "Would you like me to heal your\n"
+	.string "Pokémon back to perfect health?$"
+
+Text_WelcomeWantToHealPkmn_Night_Frlg::
+	.string "Good evening! Welcome to our\n"
+	.string "Pokémon Center.\p"
+	.string "Would you like me to heal your\n"
+	.string "Pokémon back to perfect health?$"
+
+Text_WelcomeWantToHealPkmn_Champ_Morning_Frlg::
+	.string "Morning, Champ! Welcome to our\n"
+	.string "Pokémon Center.\p"
+	.string "Would you like me to heal your\n"
+	.string "Pokémon back to perfect health?$"
+
+Text_WelcomeWantToHealPkmn_Champ_Day_Frlg::
+	.string "Hello, Champ! Welcome to our\n"
+	.string "Pokémon Center.\p"
+	.string "Would you like me to heal your\n"
+	.string "Pokémon back to perfect health?$"
+
+Text_WelcomeWantToHealPkmn_Champ_Evening_Frlg::
+	.string "Good evening, Champ! Welcome\n"
+	.string "to our Pokémon Center.\p"
+	.string "Would you like me to heal your\n"
+	.string "Pokémon back to perfect health?$"
+
+Text_WelcomeWantToHealPkmn_Champ_Night_Frlg::
+	.string "Welcome to our Pokémon Center!\n"
+	.string "Still hard at work today, Champ?\p"
+	.string "Would you like me to heal your\n"
+	.string "Pokémon back to perfect health?$"
 
 Text_TakeYourPkmnForFewSeconds_Frlg::
-	.string "Okay, I'll take your POKéMON for a\n"
+	.string "Okay, I'll take your Pokémon for a\n"
 	.string "few seconds.$"
 
 Text_WeHopeToSeeYouAgain_Frlg::
@@ -90,5 +224,5 @@ Text_WeHopeToSeeYouAgain_Frlg::
 
 Text_RestoredPkmnToFullHealth_Frlg::
 	.string "Thank you for waiting.\n"
-	.string "We've restored your POKéMON to\l"
+	.string "We've restored your Pokémon to\l"
 	.string "full health.$"
