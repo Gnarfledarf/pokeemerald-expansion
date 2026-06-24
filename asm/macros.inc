@@ -15,3 +15,8 @@
 	.include "asm/macros/battle_frontier/battle_pyramid.inc"
 	.include "asm/macros/battle_frontier/battle_tower.inc"
 	.include "asm/macros/battle_frontier/frontier_util.inc"
+
+    .macro check_if_species_caught monSpecies:req
+    setvar VAR_0x8000, \monSpecies
+    special CheckPlayerHasCaughtSpecies
+    .endm

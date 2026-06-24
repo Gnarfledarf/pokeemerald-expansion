@@ -4462,6 +4462,18 @@ bool32 CheckObjectAtXY(u32 x, u32 y)
     return FALSE;
 }
 
+void CheckPlayerHasCaughtSpecies(void)
+{
+    u32 monSpecies = gSpecialVar_0x8000;
+
+    if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(monSpecies), FLAG_GET_CAUGHT))
+    {
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+    gSpecialVar_Result = FALSE;
+}
+
 bool32 CheckPartyHasSpecies(enum Species givenSpecies)
 {
     u32 partyIndex;
