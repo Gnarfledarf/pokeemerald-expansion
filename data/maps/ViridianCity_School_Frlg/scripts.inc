@@ -14,6 +14,35 @@ ViridianCity_School_EventScript_Lass::
 ViridianCity_School_EventScript_Woman::
 	lock
 	faceplayer
+	goto_if_set FLAG_GOT_QUICK_CLAW_IN_TRAINER_SCHOOL, ViridianCity_School_EventScript_Woman_ReadBlackboardCarefully
+    compare VAR_BADGE_COUNT, 1
+    goto_if_ge ViridianCity_School_EventScript_Woman_GotGymBadge
+	msgbox ViridianCity_School_Text_GetOneGymBadge
+	closemessage
+	applymovement LOCALID_SCHOOL_WOMAN, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+ViridianCity_School_EventScript_Woman_GotGymBadge::
+	msgbox ViridianCity_School_Text_GotOneGymBadge, MSGBOX_NPC
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	checkitemspace ITEM_QUICK_CLAW
+	goto_if_eq VAR_RESULT, FALSE, EventScript_BagIsFull
+	bufferitemname STR_VAR_2, ITEM_QUICK_CLAW
+	playfanfare MUS_LEVEL_UP
+	message gText_ObtainedTheItem
+	waitmessage
+	waitfanfare
+	additem ITEM_QUICK_CLAW
+	msgbox ViridianCity_School_Text_QuickClawAway
+	call EventScript_RestorePrevTextColor
+	setflag FLAG_GOT_QUICK_CLAW_IN_TRAINER_SCHOOL
+	msgbox ViridianCity_School_Text_QuickClaw, MSGBOX_NPC
+	release
+	end
+
+ViridianCity_School_EventScript_Woman_ReadBlackboardCarefully::
 	msgbox ViridianCity_School_Text_ReadBlackboardCarefully
 	closemessage
 	applymovement LOCALID_SCHOOL_WOMAN, Common_Movement_FaceOriginalDirection
@@ -94,95 +123,119 @@ ViridianCity_School_EventScript_ExitBlackboard::
 	end
 
 ViridianCity_School_Text_TryingToMemorizeNotes::
-	.string "Whew! I'm trying to memorize all my\n"
-	.string "notes.$"
+    .string "Whew! I'm trying to memorize all my\n"
+    .string "notes.$"
+
+ViridianCity_School_Text_GetOneGymBadge::
+    .string "Hello, young Trainer!\p"
+    .string "It seems you have just begun\n"
+    .string "your journey!\p"
+    .string "If you want to become a better\n"
+    .string "Trainer, you should take on the Gym\l"
+    .string "Leaders and obtain their Badges.\p"
+    .string "Please return once you have obtained\n"
+    .string "at least one Badge for a reward.\p"
+    .string "Until then, be sure to read what's\n"
+    .string "on the blackboard carefully!$"
+
+ViridianCity_School_Text_GotOneGymBadge::
+    .string "I see you have a Gym Badge!\p"
+    .string "As reward, please take this!$"
+
+ViridianCity_School_Text_QuickClaw::
+    .string "Give this Quick Claw one of your\n"
+    .string "Pokémon to hold, and it might\l"
+    .string "attack first no matter its Speed!$"
+
+ViridianCity_School_Text_QuickClawAway::
+    .string "{PLAYER} put the Quick Claw away in\n"
+    .string "the Bag's Items Pocket.$"
 
 ViridianCity_School_Text_ReadBlackboardCarefully::
-	.string "Okay!\p"
-	.string "Be sure to read what's on the\n"
-	.string "blackboard carefully!$"
+    .string "Okay!\p"
+    .string "Be sure to read what's on the\n"
+    .string "blackboard carefully!$"
 
 ViridianCity_School_Text_NotebookFirstPage::
-	.string "Let's check out the notebook.\p"
-	.string "First page…\p"
-	.string "POKé BALLS are used to catch\n"
-	.string "POKéMON.\p"
-	.string "Up to six POKéMON can be carried\n"
-	.string "in your party.\p"
-	.string "People who raise and battle\n"
-	.string "with POKéMON are called TRAINERS.$"
+    .string "Let's check out the notebook.\p"
+    .string "First page…\p"
+    .string "Poké Balls are used to catch\n"
+    .string "Pokémon.\p"
+    .string "Up to six Pokémon can be carried\n"
+    .string "in your party.\p"
+    .string "People who raise and battle\n"
+    .string "with Pokémon are called Trainers.$"
 
 ViridianCity_School_Text_NotebookSecondPage::
-	.string "Second page…\p"
-	.string "A healthy POKéMON may be hard to\n"
-	.string "catch, so weaken it first.\p"
-	.string "Poison, burn, or cause another\n"
-	.string "status problem to weaken it.$"
+    .string "Second page…\p"
+    .string "A healthy Pokémon may be hard to\n"
+    .string "catch, so weaken it first.\p"
+    .string "Poison, burn, or cause another\n"
+    .string "status problem to weaken it.$"
 
 ViridianCity_School_Text_NotebookThirdPage::
-	.string "Third page…\p"
-	.string "POKéMON TRAINERS seek others to\n"
-	.string "engage in POKéMON battles.\p"
-	.string "To TRAINERS, the taste of victory\n"
-	.string "is sweet, indeed.\p"
-	.string "Battles are constantly waged at\n"
-	.string "POKéMON GYMS everywhere.$"
+    .string "Third page…\p"
+    .string "Pokémon Trainers seek others to\n"
+    .string "engage in Pokémon battles.\p"
+    .string "To Trainers, the taste of victory\n"
+    .string "is sweet, indeed.\p"
+    .string "Battles are constantly waged at\n"
+    .string "Pokémon Gyms everywhere.$"
 
 ViridianCity_School_Text_NotebookFourthPage::
-	.string "Fourth page…\p"
-	.string "The ultimate goal for all POKéMON\n"
-	.string "TRAINERS is simple.\p"
-	.string "It is to defeat the top eight\n"
-	.string "POKéMON GYM LEADERS.\p"
-	.string "Do so to earn the right to face…\p"
-	.string "The ELITE FOUR of the POKéMON\n"
-	.string "LEAGUE!$"
+    .string "Fourth page…\p"
+    .string "The ultimate goal for all Pokémon\n"
+    .string "Trainers is simple.\p"
+    .string "It is to defeat the top eight\n"
+    .string "Pokémon Gym Leaders.\p"
+    .string "Do so to earn the right to face…\p"
+    .string "The Elite Four of the Pokémon\n"
+    .string "League!$"
 
 ViridianCity_School_Text_TurnThePage::
-	.string "Turn the page?$"
+    .string "Turn the page?$"
 
 ViridianCity_School_Text_HeyDontLookAtMyNotes::
-	.string "GIRL: Hey!\n"
-	.string "Don't look at my notes!$"
+    .string "Girl: Hey!\n"
+    .string "Don't look at my notes!$"
 
 ViridianCity_School_Text_BlackboardListsStatusProblems::
-	.string "The blackboard lists POKéMON\n"
-	.string "STATUS problems during battles.$"
+    .string "The blackboard lists Pokémon\n"
+    .string "Status problems during battles.$"
 
 ViridianCity_School_Text_ReadWhichTopic::
-	.string "Which topic do you want to read?$"
+    .string "Which topic do you want to read?$"
 
 ViridianCity_School_Text_ExplainSleep::
-	.string "A POKéMON can't attack if it's\n"
-	.string "asleep.\p"
-	.string "POKéMON will stay asleep even\n"
-	.string "after battles.\p"
-	.string "Use AWAKENING to awaken one\n"
-	.string "from sleep.$"
+    .string "A Pokémon can't attack if it's\n"
+    .string "asleep.\p"
+    .string "Pokémon will stay asleep even\n"
+    .string "after battles.\p"
+    .string "Use Awakening to awaken one\n"
+    .string "from sleep.$"
 
 ViridianCity_School_Text_ExplainBurn::
-	.string "A burn reduces ATTACK power.\n"
-	.string "It also causes ongoing HP loss.\p"
-	.string "A burn remains after a battle.\n"
-	.string "Use BURN HEAL to cure a burn.$"
+    .string "A burn reduces Attack power.\n"
+    .string "It also causes ongoing HP loss.\p"
+    .string "A burn remains after a battle.\n"
+    .string "Use Burn Heal to cure a burn.$"
 
 ViridianCity_School_Text_ExplainPoison::
-	.string "When poisoned, a POKéMON's health\n"
-	.string "steadily drops.\p"
-	.string "Poison lingers after battles.\n"
-	.string "Use an ANTIDOTE to cure poison!$"
+    .string "When poisoned, a Pokémon's health\n"
+    .string "steadily drops.\p"
+    .string "Poison lingers after battles.\n"
+    .string "Use an Antidote to cure poison!$"
 
 ViridianCity_School_Text_ExplainFreeze::
-	.string "A frozen POKéMON becomes\n"
-	.string "helplessly immobile.\p"
-	.string "It stays frozen even after the\n"
-	.string "battle ends.\p"
-	.string "Use ICE HEAL to thaw out the\n"
-	.string "suffering POKéMON.$"
+    .string "A frozen Pokémon becomes\n"
+    .string "helplessly immobile.\p"
+    .string "It stays frozen even after the\n"
+    .string "battle ends.\p"
+    .string "Use Ice Heal to thaw out the\n"
+    .string "suffering Pokémon.$"
 
 ViridianCity_School_Text_ExplainParalysis::
-	.string "Paralysis reduces SPEED and may\n"
-	.string "prevent the POKéMON from moving.\p"
-	.string "Paralysis remains after battles.\n"
-	.string "Use PARLYZ HEAL for treatment.$"
-
+    .string "Paralysis reduces Speed and may\n"
+    .string "prevent the Pokémon from moving.\p"
+    .string "Paralysis remains after battles.\n"
+    .string "Use Paralyze Heal for treatment.$"
