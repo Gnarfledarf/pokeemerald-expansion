@@ -2333,6 +2333,32 @@ bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_checkfieldmoveusable(struct ScriptContext* ctx)
+{
+    u32 partyIndex;
+    enum FieldMove fieldMove = ScriptReadHalfword(ctx);
+    enum Move moveId = gFieldMoveInfo[fieldMove].moveID;
+    gSpecialVar_Result = FALSE;
+
+    Script_RequestEffects(SCREFF_V1);
+
+    if (!IsFieldMoveUnlocked(fieldMove))
+        return FALSE;
+
+    partyIndex = Party_FirstMonCanLearnTeachableMove(moveId);
+    if (partyIndex != PARTY_SIZE)
+    {
+        gFieldEffectArguments[0] = partyIndex;
+        gSpecialVar_0x8004 = GetMonData(&gParties[B_TRAINER_PLAYER][partyIndex], MON_DATA_SPECIES, NULL);
+        gSpecialVar_Result = TRUE;
+        GetMonData(&gParties[B_TRAINER_PLAYER][partyIndex], MON_DATA_NICKNAME, gStringVar1);
+        StringGet_Nickname(gStringVar1);
+        StringCopy(gStringVar2, gMovesInfo[moveId].name);
+    }
+
+    return FALSE;
+}
+
 bool8 ScrCmd_addmoney(struct ScriptContext *ctx)
 {
     u32 amount = ScriptReadWord(ctx);

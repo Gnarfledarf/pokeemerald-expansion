@@ -1,10 +1,11 @@
 @ Interact with cuttable tree
 EventScript_CutTree::
 	lockall
-	checkfieldmove FIELD_MOVE_CUT, TRUE
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CheckTreeCantCut
-	setfieldeffectargument 0, VAR_RESULT
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
+	checkitem ITEM_HM01, 1
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CheckTreeCantCut
+	checkfieldmoveusable FIELD_MOVE_CUT
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CheckTreeCantCut
+	goto_if_set FLAG_SYS_USE_CUT, EventScript_CutTreeQuick
 	buffermovename STR_VAR_2, MOVE_CUT
 	msgbox Text_WantToCut, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_CancelCut
@@ -16,8 +17,20 @@ EventScript_CutTreeCommon:
 	dofieldeffect FLDEFF_USE_CUT_ON_TREE
 	waitstate
 EventScript_CutTreeDown:: @ fallthrough
+	setflag FLAG_SYS_USE_CUT
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+	applymovement VAR_LAST_TALKED, Movement_CutTreeDown
+	waitmovement 0
+	removeobject VAR_LAST_TALKED
+	releaseall
+	end
+
+EventScript_CutTreeQuick::
+	setflag FLAG_SYS_USE_CUT
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+	playse SE_M_CUT
 	applymovement VAR_LAST_TALKED, Movement_CutTreeDown
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
@@ -63,10 +76,11 @@ EventScript_UseRockSmash::
 @ Interact with smashable rock
 EventScript_RockSmash::
 	lockall
-	checkfieldmove FIELD_MOVE_ROCK_SMASH, TRUE
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
-	setfieldeffectargument 0, VAR_RESULT
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
+	checkfieldmoveusable FIELD_MOVE_ROCK_SMASH
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CantSmashRock
+	checkitem ITEM_HM06, 1
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CantSmashRock
+	goto_if_set FLAG_SYS_USE_ROCK_SMASH, EventScript_RockSmashQuick
 	buffermovename STR_VAR_2, MOVE_ROCK_SMASH
 	msgbox Text_WantToSmash, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
@@ -79,8 +93,25 @@ EventScript_RockSmashCommon:
 	dofieldeffect FLDEFF_USE_ROCK_SMASH
 	waitstate
 EventScript_SmashRock:: @ fallthrough
+	setflag FLAG_SYS_USE_ROCK_SMASH
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+	applymovement VAR_LAST_TALKED, Movement_SmashRock
+	waitmovement 0
+	removeobject VAR_LAST_TALKED
+	specialvar VAR_RESULT, TryUpdateRusturfTunnelState
+	goto_if_eq VAR_RESULT, TRUE, EventScript_EndSmash
+	special RockSmashWildEncounter
+	goto_if_eq VAR_RESULT, FALSE, EventScript_EndSmash
+	waitstate
+	releaseall
+	end
+
+EventScript_RockSmashQuick::
+	setflag FLAG_SYS_USE_ROCK_SMASH
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+	playse SE_M_ROCK_THROW
 	applymovement VAR_LAST_TALKED, Movement_SmashRock
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
@@ -224,8 +255,10 @@ Text_CantSmash:
 EventScript_StrengthBoulder::
 	lockall
 	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_CheckActivatedBoulder
-	checkfieldmove FIELD_MOVE_STRENGTH, TRUE
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantStrength
+	checkfieldmoveusable FIELD_MOVE_STRENGTH
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CantStrength
+	checkitem ITEM_HM04, 1
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CantStrength
 	setfieldeffectargument 0, VAR_RESULT
 	msgbox Text_WantToStrength, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_CancelStrength
@@ -283,13 +316,16 @@ Text_StrengthActivated:
 
 EventScript_UseWaterfall::
 	lockall
-	checkfieldmove FIELD_MOVE_WATERFALL
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWaterfall
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	setfieldeffectargument 0, VAR_RESULT
+	checkfieldmoveusable FIELD_MOVE_WATERFALL
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CantWaterfall
+	checkitem ITEM_HM07
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CantWaterfall
+	goto_if_set FLAG_SYS_USE_WATERFALL, EventScript_WaterfallQuick
 	msgbox Text_WantToWaterfall, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
 	msgbox Text_MonUsedWaterfall, MSGBOX_DEFAULT
+	EventScript_WaterfallQuick:
+	setflag FLAG_SYS_USE_WATERFALL
 	hidefollowernpc
 	dofieldeffect FLDEFF_USE_WATERFALL
 	callnative FollowerNPC_WarpSetEnd
@@ -318,15 +354,15 @@ Text_MonUsedWaterfall:
 
 EventScript_UseDive::
 	lockall
-	checkfieldmove FIELD_MOVE_DIVE
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantDive
-	copyvar 0x8004 VAR_RESULT
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	setfieldeffectargument 0, VAR_RESULT
+	checkfieldmoveusable FIELD_MOVE_DIVE
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CantDive
+	checkitem ITEM_HM08
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CantDive
 	setfieldeffectargument 1, 1
 	msgbox Text_WantToDive, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_EndDive
 	msgbox Text_MonUsedDive, MSGBOX_DEFAULT
+	setflag FLAG_SYS_USE_WATERFALL
 	hidefollowernpc
 	setfieldeffectargument 0, VAR_0x8004
 	setfieldeffectargument 1, 1
@@ -345,10 +381,10 @@ EventScript_EndDive::
 
 EventScript_UseDiveUnderwater::
 	lockall
-	checkfieldmove FIELD_MOVE_DIVE
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSurface
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	setfieldeffectargument 0, VAR_RESULT
+	checkfieldmoveusable FIELD_MOVE_DIVE
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CantSurface
+	checkitem ITEM_HM08
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CantSurface
 	setfieldeffectargument 1, 1
 	msgbox Text_WantToSurface, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_NoSurface
@@ -444,8 +480,8 @@ EventScript_UseDefog::
 
 EventScript_UseRockClimb::
 	lockall
-	checkfieldmove FIELD_MOVE_ROCK_CLIMB
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantRockClimb
+	checkfieldmoveusable FIELD_MOVE_ROCK_CLIMB
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CantRockClimb
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
 	msgbox Text_WantToRockClimb, MSGBOX_YESNO
@@ -466,8 +502,8 @@ EventScript_EndRockClimb::
 @ Interact with a tree a Pokémon can use headbutt on
 EventScript_Headbutt::
 	lockall
-	checkfieldmove FIELD_MOVE_HEADBUTT
-	compare VAR_RESULT, PARTY_SIZE
+	checkfieldmoveusable FIELD_MOVE_HEADBUTT
+	compare VAR_RESULT, TRUE
 	goto_if_eq EventScript_CantHeadbuttTree
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick 0, VAR_RESULT

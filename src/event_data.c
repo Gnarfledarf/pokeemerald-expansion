@@ -1,5 +1,6 @@
 #include "global.h"
 #include "event_data.h"
+#include "field_move.h"
 #include "pokedex.h"
 
 #define SPECIAL_FLAGS_SIZE  (NUM_SPECIAL_FLAGS / 8)  // 8 flags per byte
@@ -62,6 +63,7 @@ void ClearTempFieldEventData(void)
     FlagClear(FLAG_SYS_ENC_UP_ITEM);
     FlagClear(FLAG_SYS_ENC_DOWN_ITEM);
     FlagClear(FLAG_SYS_USE_STRENGTH);
+    ClearFieldMoveFlags();
     FlagClear(FLAG_SYS_CTRL_OBJ_DELETE);
     FlagClear(FLAG_NURSE_UNION_ROOM_REMINDER);
 }

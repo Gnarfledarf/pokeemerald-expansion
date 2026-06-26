@@ -18,6 +18,7 @@
 #include "field_effect.h"
 #include "field_effect_helpers.h"
 #include "field_message_box.h"
+#include "field_move.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
 #include "field_special_scene.h"
@@ -407,6 +408,7 @@ void Overworld_ResetStateAfterFly(void)
     VarSet(VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 0);
     FlagClear(FLAG_SYS_USE_STRENGTH);
     FlagClear(FLAG_SYS_USE_FLASH);
+    ClearFieldMoveFlags();
 }
 
 void Overworld_ResetStateAfterTeleport(void)
@@ -418,6 +420,7 @@ void Overworld_ResetStateAfterTeleport(void)
     VarSet(VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 0);
     FlagClear(FLAG_SYS_USE_STRENGTH);
     FlagClear(FLAG_SYS_USE_FLASH);
+    ClearFieldMoveFlags();
     RunScriptImmediately(EventScript_ResetMrBriney);
 }
 
@@ -430,6 +433,7 @@ void Overworld_ResetStateAfterDigEscRope(void)
     VarSet(VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 0);
     FlagClear(FLAG_SYS_USE_STRENGTH);
     FlagClear(FLAG_SYS_USE_FLASH);
+    ClearFieldMoveFlags();
 }
 
 #if B_RESET_FLAGS_VARS_AFTER_WHITEOUT == TRUE
@@ -465,6 +469,7 @@ static void Overworld_ResetStateAfterWhiteOut(void)
     VarSet(VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 0);
     FlagClear(FLAG_SYS_USE_STRENGTH);
     FlagClear(FLAG_SYS_USE_FLASH);
+    ClearFieldMoveFlags();
     if (B_RESET_FLAGS_VARS_AFTER_WHITEOUT == TRUE)
         Overworld_ResetBattleFlagsAndVars();
     // If you were defeated by Kyogre/Groudon and the step counter has

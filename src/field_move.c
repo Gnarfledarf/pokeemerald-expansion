@@ -243,3 +243,11 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
 };
+
+void ClearFieldMoveFlags(void)
+{
+    FlagClear(FLAG_SYS_USE_CUT);
+    FlagClear(FLAG_SYS_USE_SURF);
+    FlagClear(FLAG_SYS_USE_ROCK_SMASH);
+    FlagClear(FLAG_SYS_USE_WATERFALL);
+}

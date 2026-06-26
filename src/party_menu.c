@@ -2960,15 +2960,32 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     // Add field moves to action list
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
+        enum Move moveId = GetMonData(&mons[slotId], i + MON_DATA_MOVE1);
+        if (moveId == MOVE_NONE)
+            continue;
         for (j = 0; j != FIELD_MOVES_COUNT; j++)
         {
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FieldMove_GetMoveId(j))
             {
+                if (moveId != MOVE_CUT && moveId != MOVE_FLY && moveId != MOVE_SURF && moveId != MOVE_STRENGTH && moveId != MOVE_FLASH && moveId != MOVE_ROCK_SMASH && moveId != MOVE_WATERFALL && moveId != MOVE_WHIRLPOOL && moveId != MOVE_DIVE) // If Mon already knows FLY, prevent it from being added to action list
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                 break;
             }
         }
     }
+
+    if (sPartyMenuInternal->numActions < 5
+        && (CheckBagHasItem(ITEM_HM02, 1))
+        && ((CanTeachMove(&mons[slotId], MOVE_FLY) == CAN_LEARN_MOVE) || (CanTeachMove(&mons[slotId], MOVE_FLY) == ALREADY_KNOWS_MOVE))) // If Mon can learn Fly and action list consists of < 4 moves, add FLY to action list
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
+    if (sPartyMenuInternal->numActions < 5
+        && (CheckBagHasItem(ITEM_HM01, 1))
+        && ((CanTeachMove(&mons[slotId], MOVE_CUT) == CAN_LEARN_MOVE) || (CanTeachMove(&mons[slotId], MOVE_CUT) == ALREADY_KNOWS_MOVE))) // If Mon can learn Fly and action list consists of < 4 moves, add CUT to action list
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 0 + MENU_FIELD_MOVES);
+    if (sPartyMenuInternal->numActions < 5
+        && (CheckBagHasItem(ITEM_HM05, 1))
+        && ((CanTeachMove(&mons[slotId], MOVE_FLASH) == CAN_LEARN_MOVE) || (CanTeachMove(&mons[slotId], MOVE_FLASH) == ALREADY_KNOWS_MOVE))) // If Mon can learn Flash and action list consists of < 4 moves, add FLASH to action list
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
 
     if (!InBattlePike())
     {
@@ -8095,6 +8112,21 @@ static void CB2_ChooseContestMon(void)
     gFieldCallback2 = CB2_FadeFromPartyMenu;
     SetMainCallback2(CB2_ReturnToField);
 }
+
+u32 Party_FirstMonCanLearnTeachableMove(enum Move moveId)
+{
+    for (u32 i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) == SPECIES_NONE)
+            break;
+        if (MonKnowsMove(&gParties[B_TRAINER_PLAYER][i], moveId))
+            return i;
+        if (CanLearnTeachableMove(GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES), moveId))
+            return i;
+    }
+    return PARTY_SIZE;
+}
+
 
 // Used as a script special for showing a party mon to various npcs (e.g. in-game trades, move deleter)
 void ChoosePartyMon(void)

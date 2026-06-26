@@ -3,10 +3,12 @@
 #include "bike.h"
 #include "event_data.h"
 #include "event_object_movement.h"
+#include "event_scripts.h"
 #include "field_camera.h"
 #include "field_control_avatar.h"
 #include "field_effect.h"
 #include "field_effect_helpers.h"
+#include "field_move.h"
 #include "field_screen_effect.h"
 #include "field_player_avatar.h"
 #include "fieldmap.h"
@@ -1628,6 +1630,27 @@ bool8 PartyHasMonWithSurf(void)
             if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) == SPECIES_NONE)
                 break;
             if (MonKnowsMove(&gParties[B_TRAINER_PLAYER][i], MOVE_SURF))
+                return TRUE;
+            if (CanLearnTeachableMove(GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES), MOVE_SURF))
+                return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+bool8 PartyHasMonWithWaterfall(void)
+{
+    u8 i;
+
+    if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+    {
+        for (i = 0; i < PARTY_SIZE; i++)
+        {
+            if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) == SPECIES_NONE)
+                break;
+            if (MonKnowsMove(&gParties[B_TRAINER_PLAYER][i], MOVE_WATERFALL))
+                return TRUE;
+            if (CanLearnTeachableMove(GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES), MOVE_WATERFALL))
                 return TRUE;
         }
     }

@@ -1206,6 +1206,14 @@
 	.byte \checkUnlocked
 	.endm
 
+	@ Checks if field move can be used. If so, VAR_RESULT is set to TRUE, gFieldEffectArguments[0] to masked
+	@ species or party index of the Pokemon, VAR_0x8004 to species, STR_VAR_1 to the Pokemon's name,
+	@ and STR_VAR_2 to the move's name.
+	.macro checkfieldmoveusable fieldMove:req
+	.byte SCR_OP_CHECKFIELDMOVEUSABLE
+	.2byte \fieldMove
+	.endm
+
 	@ Converts STR_VAR_1, STR_VAR_2, or STR_VAR_3 to its corresponding index into sScriptStringVars (0, 1, or 2).
 	@ If given anything else it will output it directly.
 	@ Note: Because the STR_VAR_# arguments given to this macro are not part of a processed string they are not

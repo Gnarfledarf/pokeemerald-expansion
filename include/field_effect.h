@@ -54,4 +54,5 @@ u8 CreateMonSprite_PicBox(enum Species species, s16 x, s16 y, u8 subpriority);
 void StartEscapeRopeFieldEffect(void);
 void FieldEffectFreeGraphicsResources(struct Sprite *sprite);
 bool8 IsRockClimbActive(void);
+
 #endif // GUARD_FIELD_EFFECTS_H
