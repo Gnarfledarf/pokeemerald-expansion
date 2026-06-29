@@ -633,12 +633,12 @@ DewfordTown_Text_TinyIslandCommunity:
 	.string "everyone picks up on it right away.$"
 
 DewfordTown_Text_TownSign:
-	.string "DEWFORD TOWN\n"
+	.string "Dewford Town\n"
 	.string "“A tiny island in the blue sea.”$"
 
 DewfordTown_Text_GymSign:
-	.string "DEWFORD TOWN POKéMON GYM\n"
-	.string "LEADER: BRAWLY\l"
+	.string "Dewford Town Pokémon Gym\n"
+	.string "Leader: Brawly\l"
 	.string "“A big wave in fighting!”$"
 
 DewfordTown_Text_HallSign:
@@ -647,9 +647,9 @@ DewfordTown_Text_HallSign:
 
 Route104_Text_LandedInDewfordDeliverLetter:
 	.string "MR. BRINEY: Ahoy!\n"
-	.string "We've hit land in DEWFORD.\p"
+	.string "We've hit land in Dewford.\p"
 	.string "I suppose you're off to deliver that\n"
-	.string "LETTER to, who was it now, STEVEN!$"
+	.string "LETTER to, who was it now, Steven!$"
 
 DewfordTown_Text_SetSailBackToPetalburg:
 	.string "MR. BRINEY: Have you delivered your\n"
@@ -668,7 +668,7 @@ DewfordTown_Text_GoDeliverIllBeWaiting:
 
 DewfordTown_Text_BrineyLandedInDewford:
 	.string "MR. BRINEY: Ahoy!\n"
-	.string "We've hit land in DEWFORD!\p"
+	.string "We've hit land in Dewford!\p"
 	.string "You just go on and tell me whenever\n"
 	.string "you want to set sail again!$"
 
@@ -704,12 +704,12 @@ DewfordTown_Text_ThrowInFishingAdvice:
 	.string "And, as an added bonus, I'll even throw\n"
 	.string "in a little fishing advice!\p"
 	.string "First, you want to face the water,\n"
-	.string "then use the ROD.\p"
+	.string "then use the Rod.\p"
 	.string "Focus your mind…\n"
-	.string "If you get a bite, pull on the ROD.\p"
+	.string "If you get a bite, pull on the Rod.\p"
 	.string "Sometimes you can snag something\n"
 	.string "immediately, but with bigger catches,\l"
-	.string "you need to time the pulls on your ROD\l"
+	.string "you need to time the pulls on your Rod\l"
 	.string "to haul them in.$"
 
 DewfordTown_Text_ThatsTooBadThen:
@@ -728,12 +728,12 @@ DewfordTown_Text_FishingAdvice:
 	.string "Oh, hey, don't get down on yourself!\n"
 	.string "I'll give you a little fishing advice.\p"
 	.string "First, you want to face the water,\n"
-	.string "then use the ROD.\p"
+	.string "then use the Rod.\p"
 	.string "Focus your mind…\n"
-	.string "If you get a bite, pull the ROD.\p"
+	.string "If you get a bite, pull the Rod.\p"
 	.string "Sometimes you can snag something\n"
 	.string "immediately, but with bigger catches,\l"
-	.string "you need to time the pulls on your ROD\l"
+	.string "you need to time the pulls on your Rod\l"
 	.string "to haul them in.$"
 
 DewfordTown_Text_XIsTheBiggestHappeningThingRight:

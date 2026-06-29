@@ -76,7 +76,7 @@ Remember to add new back pics after `TRAINER_PIC_FRONT_COUNT` but before `TRAINE
 You can test your new trainer back pic by going to [`src/data/battle_partners.party`](./src/data/battle_partners.party) and change the `Pic` field. The syntax should match the constant (`TRAINER_PIC_BACK_NEW_ONE`) with the underscore replaced by spaces. For example:
 ```diff
  === PARTNER_STEVEN ===
- Name: STEVEN
+ Name: Steven
  Class: Rival
 -Pic: Steven
 +Pic: New One

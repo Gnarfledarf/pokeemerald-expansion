@@ -202,7 +202,7 @@ Converts trainer data (for `convert_trainer_parties.py`) and partner data (for `
 #### [src/data/battle_partners.party](..src/data/battle_partners.party)
 ```diff
 +=== PARTNER_STEVEN ===
-+Name: STEVEN
++Name: Steven
 +Class: Rival
 +Pic: Steven
 +Gender: Male

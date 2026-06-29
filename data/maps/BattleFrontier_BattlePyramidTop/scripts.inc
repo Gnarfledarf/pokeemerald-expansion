@@ -247,7 +247,7 @@ BattleFrontier_BattlePyramidTop_Text_ExplorationsAreGrandestAdventure:
 	.string "are the grandest of adventures?\p"
 	.string "Your own wits!\p"
 	.string "Your own strength!\p"
-	.string "Your own POKéMON!\p"
+	.string "Your own Pokémon!\p"
 	.string "And, above all, only your own courage\n"
 	.string "to lead you through unknown worlds…$"
 
@@ -272,11 +272,11 @@ BattleFrontier_BattlePyramidTop_Text_BrandonFrontierPassPlease:
 	.string "BRANDON: Hahahah! Grand it was!\n"
 	.string "Grand, yes, indeed!\p"
 	.string "Well done! You've earned recognition!\n"
-	.string "Your FRONTIER PASS, please!$"
+	.string "Your Frontier Pass, please!$"
 
 BattleFrontier_BattlePyramidTop_Text_ReceivedBraveSymbol:
 	.string "The Brave Symbol was embossed on\n"
-	.string "the FRONTIER PASS!$"
+	.string "the Frontier Pass!$"
 
 BattleFrontier_BattlePyramidTop_Text_LookForwardToNextMeeting:
 	.string "Young explorer!\n"

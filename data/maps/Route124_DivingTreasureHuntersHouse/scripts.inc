@@ -320,7 +320,7 @@ Route124_DivingTreasureHuntersHouse_Text_TradeSomethingElse:
 	.string "Do you want to trade something else?$"
 
 Route124_DivingTreasureHuntersHouse_Text_BagFull:
-	.string "Whoops, your BAG's full.\n"
+	.string "Whoops, your Bag's full.\n"
 	.string "Get rid of some items, friend!$"
 
 Route124_DivingTreasureHuntersHouse_Text_ComeBackIfYouChangeMind:
@@ -329,10 +329,10 @@ Route124_DivingTreasureHuntersHouse_Text_ComeBackIfYouChangeMind:
 
 Route124_DivingTreasureHuntersHouse_Text_ShardTradeBoard:
 	.string "{CLEAR_TO 10}Wanted item{CLEAR_TO 124}Trade item\n"
-	.string "{CLEAR_TO 15}RED SHARD{CLEAR_TO 89}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 123}FIRE STONE{CLEAR_TO 200}\p"
+	.string "{CLEAR_TO 15}RED SHARD{CLEAR_TO 89}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 123}Fire Stone{CLEAR_TO 200}\p"
 	.string "{CLEAR_TO 10}Wanted item{CLEAR_TO 124}Trade item\n"
-	.string "{CLEAR_TO 6}YELLOW SHARD{CLEAR_TO 89}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 115}THUNDERSTONE{CLEAR_TO 200}\p"
+	.string "{CLEAR_TO 6}YELLOW SHARD{CLEAR_TO 89}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 115}Thunder Stone{CLEAR_TO 200}\p"
 	.string "{CLEAR_TO 10}Wanted item{CLEAR_TO 124}Trade item\n"
-	.string "{CLEAR_TO 12}BLUE SHARD{CLEAR_TO 89}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 121}WATER STONE{CLEAR_TO 200}\p"
+	.string "{CLEAR_TO 12}BLUE SHARD{CLEAR_TO 89}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 121}Water Stone{CLEAR_TO 200}\p"
 	.string "{CLEAR_TO 10}Wanted item{CLEAR_TO 124}Trade item\n"
 	.string "{CLEAR_TO 8}GREEN SHARD{CLEAR_TO 89}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 123}LEAF STONE$"

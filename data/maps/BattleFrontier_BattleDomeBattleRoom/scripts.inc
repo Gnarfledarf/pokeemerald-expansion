@@ -1091,11 +1091,11 @@ BattleFrontier_BattleDomeBattleRoom_Text_WinnerIsTucker:
 
 BattleFrontier_BattleDomeBattleRoom_Text_SeeYourFrontierPass:
 	.string "TUCKER: Rules are rules!\n"
-	.string "Let me see your FRONTIER PASS.$"
+	.string "Let me see your Frontier Pass.$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_ReceivedTacticsSymbol:
 	.string "The Tactics Symbol was embossed on\n"
-	.string "the FRONTIER PASS!$"
+	.string "the Frontier Pass!$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_WontUnderestimateYouNextTime:
 	.string "… … … … … …\p"
@@ -1108,7 +1108,7 @@ BattleFrontier_BattleDomeBattleRoom_Text_CanWinStreakBeStretched:
 
 BattleFrontier_BattleDomeBattleRoom_Text_LegendHasReturnedDomeAceTucker:
 	.string "Ladies and gentlemen!\n"
-	.string "Boys, girls, and POKéMON!\p"
+	.string "Boys, girls, and Pokémon!\p"
 	.string "Finally!\n"
 	.string "Finally, the legend has returned!\p"
 	.string "Yes, the name of that legend!\n"
@@ -1136,7 +1136,7 @@ BattleFrontier_BattleDomeBattleRoom_Text_NeverLostWhenPowerUnleashed:
 	.string "Never before! I haven't ever lost in the\n"
 	.string "times I've had to unleash my power.\p"
 	.string "Yes, quite fantastic!\n"
-	.string "Your FRONTIER PASS, please?$"
+	.string "Your Frontier Pass, please?$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_TacticsSymbolTookGoldenShine:
 	.string "The Tactics Symbol took on\n"

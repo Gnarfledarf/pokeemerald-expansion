@@ -66,7 +66,7 @@ GHOST_BATTLE_TEST("Ghost battle: Intro plays correctly (with Silph Scope)")
         TURN {}
     } SCENE {
         MESSAGE("The GHOST appeared!");
-        MESSAGE("SILPH SCOPE unveiled the GHOST's identity!");
+        MESSAGE("Silph Scope unveiled the GHOST's identity!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_SILPH_SCOPED, opponent);
         MESSAGE("The GHOST was MAROWAK!");
         MESSAGE("Go! Wobbuffet!");

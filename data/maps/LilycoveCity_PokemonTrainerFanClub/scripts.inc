@@ -603,7 +603,7 @@ LilycoveCity_PokemonTrainerFanClub_Text_HearingAboutToughNewTrainer:
 	.string "I've been hearing things about\n"
 	.string "a tough new TRAINER.\p"
 	.string "This TRAINER's supposed to be beating\n"
-	.string "GYM LEADERS, even.\p"
+	.string "GYM Leaders, even.\p"
 	.string "Do you know anything about this\n"
 	.string "new TRAINER?$"
 
@@ -624,18 +624,18 @@ LilycoveCity_PokemonTrainerFanClub_Text_BrawlyNoImYourFan:
 
 LilycoveCity_PokemonTrainerFanClub_Text_ICantHelpLikingBrawly:
 	.string "I can't help it, I can only get to\n"
-	.string "like BRAWLY…$"
+	.string "like Brawly…$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_NobodyUnderstandsBrawly:
 	.string "Nobody understands the charm of\n"
 	.string "BRAWLY…\p"
 	.string "I don't care!\p"
 	.string "Even if I'm the only one, I'm going\n"
-	.string "to keep cheering for BRAWLY!$"
+	.string "to keep cheering for Brawly!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_MyFavoriteTrainerIsBrawly:
 	.string "Whatever anyone says, my favorite\n"
-	.string "TRAINER is DEWFORD's GYM LEADER\l"
+	.string "TRAINER is Dewford's Gym Leader\l"
 	.string "BRAWLY!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YouveSurpassedYourFather:
@@ -661,15 +661,15 @@ LilycoveCity_PokemonTrainerFanClub_Text_LongWayToGoComparedToNorman:
 
 LilycoveCity_PokemonTrainerFanClub_Text_YouAndNormanAreDifferent:
 	.string "You're beginning to get the same\n"
-	.string "air of awe NORMAN exudes.\p"
+	.string "air of awe Norman exudes.\p"
 	.string "But there's something conclusively\n"
-	.string "different between you and NORMAN.\p"
+	.string "different between you and Norman.\p"
 	.string "I can't tell you what that is.\n"
 	.string "You'll have to find it yourself.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_WeDiscussStrongestTrainers:
 	.string "Everyone here, we're all huge fans\n"
-	.string "of POKéMON battles.\p"
+	.string "of Pokémon battles.\p"
 	.string "We discuss who we consider to be\n"
 	.string "the strongest of all TRAINERS.\p"
 	.string "If you were to become famous,\n"
@@ -777,7 +777,7 @@ LilycoveCity_PokemonTrainerFanClub_Text_TrainerIsStandout:
 LilycoveCity_PokemonTrainerFanClub_Text_NoOneCanKnockYouButTrainerStronger:
 	.string "You are really popular…\p"
 	.string "You're strong, and you're caring to\n"
-	.string "POKéMON. No one can knock you.\p"
+	.string "Pokémon. No one can knock you.\p"
 	.string "But, you know, I believe in {STR_VAR_1}.\p"
 	.string "{STR_VAR_1} is definitely stronger!\n"
 	.string "I'm positive!$"

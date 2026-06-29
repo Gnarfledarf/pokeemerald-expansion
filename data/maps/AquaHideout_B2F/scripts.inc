@@ -128,7 +128,7 @@ AquaHideout_B2F_Text_Grunt4PostBattle:
 	.string "Is this good enough?$"
 
 AquaHideout_B2F_Text_Grunt6Intro:
-	.string "Warp panels, the HIDEOUT's pride\n"
+	.string "Warp panels, the Hideout's pride\n"
 	.string "and joy!\p"
 	.string "You're clueless about where you are,\n"
 	.string "aren't you?\p"
@@ -141,12 +141,12 @@ AquaHideout_B2F_Text_Grunt6Defeat:
 
 AquaHideout_B2F_Text_Grunt6PostBattle:
 	.string "That reminds me… I can't remember\n"
-	.string "where I put the MASTER BALL.\p"
+	.string "where I put the Master Ball.\p"
 	.string "If I fail to guard it, our BOSS will\n"
 	.string "chew me out…$"
 
 AquaHideout_B2F_Text_Grunt8Intro:
-	.string "When I joined TEAM AQUA, the first\n"
+	.string "When I joined Team Aqua, the first\n"
 	.string "thing I had to learn was how these\l"
 	.string "warp panels connected.$"
 
