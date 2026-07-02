@@ -650,7 +650,7 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_PokemonBreederF, gTrainerPalette_PokemonBreederF),
     },
-    [TRAINER_PIC_COOLTRAINER_M] =
+    [TRAINER_PIC_ACE_TRAINER_M] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_CoolTrainerM, gTrainerPalette_CoolTrainerM),
     },
@@ -718,7 +718,7 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_TuberM, gTrainerPalette_TuberM),
     },
-    [TRAINER_PIC_COOLTRAINER_F] =
+    [TRAINER_PIC_ACE_TRAINER_F] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_CoolTrainerF, gTrainerPalette_CoolTrainerF),
     },
@@ -1038,7 +1038,7 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_CueBallFrlg, gTrainerPalette_CueBallFrlg),
     },
-    [TRAINER_PIC_GAMER_FRLG] =
+    [TRAINER_PIC_GAMBLER_FRLG] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_GamerFrlg, gTrainerPalette_GamerFrlg),
     },
@@ -1090,11 +1090,11 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_RocketGruntMFrlg, gTrainerPalette_RocketGruntMFrlg),
     },
-    [TRAINER_PIC_COOLTRAINER_M_FRLG] =
+    [TRAINER_PIC_ACE_TRAINER_M_FRLG] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_CooltrainerMFrlg, gTrainerPalette_CooltrainerMFrlg),
     },
-    [TRAINER_PIC_COOLTRAINER_F_FRLG] =
+    [TRAINER_PIC_ACE_TRAINER_F_FRLG] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_CooltrainerFFrlg, gTrainerPalette_CooltrainerFFrlg),
     },

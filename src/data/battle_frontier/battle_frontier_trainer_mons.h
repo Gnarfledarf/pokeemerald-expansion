@@ -1532,7 +1532,7 @@
     FRONTIER_MON_BELLOSSOM_2,   \
     -1
 
-#define FRONTIER_MONS_COOLTRAINER_1A \
+#define FRONTIER_MONS_ACE_TRAINER_1A \
     FRONTIER_MON_DUGTRIO_1,     \
     FRONTIER_MON_MEDICHAM_1,    \
     FRONTIER_MON_MISDREAVUS_1,  \
@@ -1568,7 +1568,7 @@
     FRONTIER_MON_ALAKAZAM_1,    \
     -1
 
-#define FRONTIER_MONS_COOLTRAINER_1B \
+#define FRONTIER_MONS_ACE_TRAINER_1B \
     FRONTIER_MON_WEEZING_1,     \
     FRONTIER_MON_KANGASKHAN_1,  \
     FRONTIER_MON_ELECTABUZZ_1,  \
@@ -1604,7 +1604,7 @@
     FRONTIER_MON_GARDEVOIR_1,   \
     -1
 
-#define FRONTIER_MONS_COOLTRAINER_1C \
+#define FRONTIER_MONS_ACE_TRAINER_1C \
     FRONTIER_MON_EXEGGUTOR_1,   \
     FRONTIER_MON_STARMIE_1,     \
     FRONTIER_MON_FLYGON_1,      \
@@ -2531,7 +2531,7 @@
     FRONTIER_MON_SLAKING_4,     \
     -1
 
-#define FRONTIER_MONS_COOLTRAINER_M_2A \
+#define FRONTIER_MONS_ACE_TRAINER_M_2A \
     FRONTIER_MON_MUK_1,         \
     FRONTIER_MON_GENGAR_1,      \
     FRONTIER_MON_AMPHAROS_1,    \
@@ -2630,7 +2630,7 @@
     FRONTIER_MON_JOLTEON_4,     \
     -1
 
-#define FRONTIER_MONS_COOLTRAINER_M_2B \
+#define FRONTIER_MONS_ACE_TRAINER_M_2B \
     FRONTIER_MON_FLAREON_1,     \
     FRONTIER_MON_MEGANIUM_1,    \
     FRONTIER_MON_ESPEON_1,      \
@@ -2729,8 +2729,8 @@
     FRONTIER_MON_SLAKING_4,     \
     -1
 
-// Cooltrainer M uses Latios, Cooltrainer F uses Latias
-#define FRONTIER_MONS_COOLTRAINER_2C(lati)  \
+// Ace Trainer M uses Latios, Ace Trainer F uses Latias
+#define FRONTIER_MONS_ACE_TRAINER_2C(lati)  \
     FRONTIER_MON_GENGAR_1,      \
     FRONTIER_MON_URSARING_1,    \
     FRONTIER_MON_MACHAMP_1,     \
@@ -2835,7 +2835,7 @@
 
 // Also used by PKMN Ranger M/F
 // For both classes, M uses Latios and F uses Latias
-#define FRONTIER_MONS_COOLTRAINER_2D(lati)  \
+#define FRONTIER_MONS_ACE_TRAINER_2D(lati)  \
     FRONTIER_MON_ARTICUNO_1,    \
     FRONTIER_MON_ZAPDOS_1,      \
     FRONTIER_MON_MOLTRES_1,     \
@@ -2920,7 +2920,7 @@
     FRONTIER_MON_SUICUNE_6,     \
     -1
 
-#define FRONTIER_MONS_COOLTRAINER_F_2A \
+#define FRONTIER_MONS_ACE_TRAINER_F_2A \
     FRONTIER_MON_DUGTRIO_1,     \
     FRONTIER_MON_MEDICHAM_1,    \
     FRONTIER_MON_MISDREAVUS_1,  \
@@ -3019,7 +3019,7 @@
     FRONTIER_MON_VICTREEBEL_4,  \
     -1
 
-#define FRONTIER_MONS_COOLTRAINER_F_2B \
+#define FRONTIER_MONS_ACE_TRAINER_F_2B \
     FRONTIER_MON_ELECTRODE_1,   \
     FRONTIER_MON_EXPLOUD_1,     \
     FRONTIER_MON_SHIFTRY_1,     \
@@ -4694,7 +4694,7 @@
     FRONTIER_MON_TYRANITAR_10,  \
     -1
 
-// Identical to FRONTIER_MONS_COOLTRAINER_2C but with both Latias and Latios
+// Identical to FRONTIER_MONS_ACE_TRAINER_2C but with both Latias and Latios
 #define FRONTIER_MONS_GENTLEMAN_3A \
     FRONTIER_MON_GENGAR_1,      \
     FRONTIER_MON_URSARING_1,    \
@@ -4798,7 +4798,7 @@
     FRONTIER_MON_TYRANITAR_10,  \
     -1
 
-// Identical to FRONTIER_MONS_COOLTRAINER_2D but with both Latias and Latios
+// Identical to FRONTIER_MONS_ACE_TRAINER_2D but with both Latias and Latios
 #define FRONTIER_MONS_GENTLEMAN_3B  \
     FRONTIER_MON_ARTICUNO_1,    \
     FRONTIER_MON_ZAPDOS_1,      \

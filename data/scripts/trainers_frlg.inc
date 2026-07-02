@@ -431,50 +431,50 @@ Route11_EventScript_BernieRematch::
 	end
 
 Route11_EventScript_Hugo::
-	trainerbattle_single TRAINER_GAMER_HUGO, Route11_Text_HugoIntro, Route11_Text_HugoDefeat
+	trainerbattle_single TRAINER_GAMBLER_HUGO, Route11_Text_HugoIntro, Route11_Text_HugoDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route11_EventScript_HugoRematch
 	msgbox Route11_Text_HugoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route11_EventScript_HugoRematch::
-	trainerbattle_rematch TRAINER_GAMER_HUGO, Route11_Text_HugoRematchIntro, Route11_Text_HugoDefeat
+	trainerbattle_rematch TRAINER_GAMBLER_HUGO, Route11_Text_HugoRematchIntro, Route11_Text_HugoDefeat
 	msgbox Route11_Text_HugoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route11_EventScript_Jasper::
-	trainerbattle_single TRAINER_GAMER_JASPER, Route11_Text_JasperIntro, Route11_Text_JasperDefeat
+	trainerbattle_single TRAINER_GAMBLER_JASPER, Route11_Text_JasperIntro, Route11_Text_JasperDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route11_EventScript_JasperRematch
 	msgbox Route11_Text_JasperPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route11_EventScript_JasperRematch::
-	trainerbattle_rematch TRAINER_GAMER_JASPER, Route11_Text_JasperRematchIntro, Route11_Text_JasperDefeat
+	trainerbattle_rematch TRAINER_GAMBLER_JASPER, Route11_Text_JasperRematchIntro, Route11_Text_JasperDefeat
 	msgbox Route11_Text_JasperPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route11_EventScript_Dirk::
-	trainerbattle_single TRAINER_GAMER_DIRK, Route11_Text_DirkIntro, Route11_Text_DirkDefeat
+	trainerbattle_single TRAINER_GAMBLER_DIRK, Route11_Text_DirkIntro, Route11_Text_DirkDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route11_EventScript_DirkRematch
 	msgbox Route11_Text_DirkPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route11_EventScript_DirkRematch::
-	trainerbattle_rematch TRAINER_GAMER_DIRK, Route11_Text_DirkRematchIntro, Route11_Text_DirkDefeat
+	trainerbattle_rematch TRAINER_GAMBLER_DIRK, Route11_Text_DirkRematchIntro, Route11_Text_DirkDefeat
 	msgbox Route11_Text_DirkPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route11_EventScript_Darian::
-	trainerbattle_single TRAINER_GAMER_DARIAN, Route11_Text_DarianIntro, Route11_Text_DarianDefeat
+	trainerbattle_single TRAINER_GAMBLER_DARIAN, Route11_Text_DarianIntro, Route11_Text_DarianDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route11_EventScript_DarianRematch
 	msgbox Route11_Text_DarianPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route11_EventScript_DarianRematch::
-	trainerbattle_rematch TRAINER_GAMER_DARIAN, Route11_Text_DarianRematchIntro, Route11_Text_DarianDefeat
+	trainerbattle_rematch TRAINER_GAMBLER_DARIAN, Route11_Text_DarianRematchIntro, Route11_Text_DarianDefeat
 	msgbox Route11_Text_DarianPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -743,26 +743,26 @@ Route8_EventScript_LeslieRematch::
 	end
 
 Route8_EventScript_Stan::
-	trainerbattle_single TRAINER_GAMER_STAN, Route8_Text_StanIntro, Route8_Text_StanDefeat
+	trainerbattle_single TRAINER_GAMBLER_STAN, Route8_Text_StanIntro, Route8_Text_StanDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route8_EventScript_StanRematch
 	msgbox Route8_Text_StanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route8_EventScript_StanRematch::
-	trainerbattle_rematch TRAINER_GAMER_STAN, Route8_Text_StanRematchIntro, Route8_Text_StanDefeat
+	trainerbattle_rematch TRAINER_GAMBLER_STAN, Route8_Text_StanRematchIntro, Route8_Text_StanDefeat
 	msgbox Route8_Text_StanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route8_EventScript_Rich::
-	trainerbattle_single TRAINER_GAMER_RICH, Route8_Text_RichIntro, Route8_Text_RichDefeat
+	trainerbattle_single TRAINER_GAMBLER_RICH, Route8_Text_RichIntro, Route8_Text_RichDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route8_EventScript_RichRematch
 	msgbox Route8_Text_RichPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route8_EventScript_RichRematch::
-	trainerbattle_rematch TRAINER_GAMER_RICH, Route8_Text_RichRematchIntro, Route8_Text_RichDefeat
+	trainerbattle_rematch TRAINER_GAMBLER_RICH, Route8_Text_RichRematchIntro, Route8_Text_RichDefeat
 	msgbox Route8_Text_RichPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -2711,26 +2711,26 @@ SevenIsland_SevaultCanyon_EventScript_KatelynRematch::
 	end
 
 SevenIsland_SevaultCanyon_EventScript_Leroy::
-	trainerbattle_single TRAINER_COOLTRAINER_LEROY, SevenIsland_SevaultCanyon_Text_LeroyIntro, SevenIsland_SevaultCanyon_Text_LeroyDefeat
+	trainerbattle_single TRAINER_ACE_TRAINER_LEROY, SevenIsland_SevaultCanyon_Text_LeroyIntro, SevenIsland_SevaultCanyon_Text_LeroyDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, SevenIsland_SevaultCanyon_EventScript_LeroyRematch
 	msgbox SevenIsland_SevaultCanyon_Text_LeroyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 SevenIsland_SevaultCanyon_EventScript_LeroyRematch::
-	trainerbattle_rematch TRAINER_COOLTRAINER_LEROY, SevenIsland_SevaultCanyon_Text_LeroyRematchIntro, SevenIsland_SevaultCanyon_Text_LeroyDefeat
+	trainerbattle_rematch TRAINER_ACE_TRAINER_LEROY, SevenIsland_SevaultCanyon_Text_LeroyRematchIntro, SevenIsland_SevaultCanyon_Text_LeroyDefeat
 	msgbox SevenIsland_SevaultCanyon_Text_LeroyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 SevenIsland_SevaultCanyon_EventScript_Michelle::
-	trainerbattle_single TRAINER_COOLTRAINER_MICHELLE, SevenIsland_SevaultCanyon_Text_MichelleIntro, SevenIsland_SevaultCanyon_Text_MichelleDefeat
+	trainerbattle_single TRAINER_ACE_TRAINER_MICHELLE, SevenIsland_SevaultCanyon_Text_MichelleIntro, SevenIsland_SevaultCanyon_Text_MichelleDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, SevenIsland_SevaultCanyon_EventScript_MichelleRematch
 	msgbox SevenIsland_SevaultCanyon_Text_MichellePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 SevenIsland_SevaultCanyon_EventScript_MichelleRematch::
-	trainerbattle_rematch TRAINER_COOLTRAINER_MICHELLE, SevenIsland_SevaultCanyon_Text_MichelleRematchIntro, SevenIsland_SevaultCanyon_Text_MichelleDefeat
+	trainerbattle_rematch TRAINER_ACE_TRAINER_MICHELLE, SevenIsland_SevaultCanyon_Text_MichelleRematchIntro, SevenIsland_SevaultCanyon_Text_MichelleDefeat
 	msgbox SevenIsland_SevaultCanyon_Text_MichellePostBattle, MSGBOX_AUTOCLOSE
 	end
 

@@ -3129,10 +3129,10 @@ Tentacruel
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GAMER_HUGO ===
+=== TRAINER_GAMBLER_HUGO ===
 Name: Hugo
-Class: Gamer Frlg
-Pic: Gamer Frlg
+Class: Gambler Frlg
+Pic: Gambler Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -3146,10 +3146,10 @@ Horsea
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GAMER_JASPER ===
+=== TRAINER_GAMBLER_JASPER ===
 Name: Jasper
-Class: Gamer Frlg
-Pic: Gamer Frlg
+Class: Gambler Frlg
+Pic: Gambler Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -3163,10 +3163,10 @@ Oddish
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GAMER_DIRK ===
+=== TRAINER_GAMBLER_DIRK ===
 Name: Dirk
-Class: Gamer Frlg
-Pic: Gamer Frlg
+Class: Gambler Frlg
+Pic: Gambler Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -3180,10 +3180,10 @@ Magnemite
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GAMER_DARIAN ===
+=== TRAINER_GAMBLER_DARIAN ===
 Name: Darian
-Class: Gamer Frlg
-Pic: Gamer Frlg
+Class: Gambler Frlg
+Pic: Gambler Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -3197,10 +3197,10 @@ Vulpix
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GAMER_STAN ===
+=== TRAINER_GAMBLER_STAN ===
 Name: Stan
-Class: Gamer Frlg
-Pic: Gamer Frlg
+Class: Gambler Frlg
+Pic: Gambler Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -3218,10 +3218,10 @@ Poliwhirl
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GAMER_RICH ===
+=== TRAINER_GAMBLER_RICH ===
 Name: Rich
-Class: Gamer Frlg
-Pic: Gamer Frlg
+Class: Gambler Frlg
+Pic: Gambler Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -5999,10 +5999,10 @@ Marowak
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_COOLTRAINER_SAMUEL ===
+=== TRAINER_ACE_TRAINER_SAMUEL ===
 Name: Samuel
-Class: Cooltrainer Frlg
-Pic: Cooltrainer M Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer M Frlg
 Gender: Male
 Music: Cool
 Items: Super Potion
@@ -6049,10 +6049,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Poison Sting
 - Focus Energy
 
-=== TRAINER_COOLTRAINER_GEORGE ===
+=== TRAINER_ACE_TRAINER_GEORGE ===
 Name: George
-Class: Cooltrainer Frlg
-Pic: Cooltrainer M Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer M Frlg
 Gender: Male
 Music: Cool
 Items: Hyper Potion
@@ -6099,10 +6099,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Bite
 - Take Down
 
-=== TRAINER_COOLTRAINER_COLBY ===
+=== TRAINER_ACE_TRAINER_COLBY ===
 Name: Colby
-Class: Cooltrainer Frlg
-Pic: Cooltrainer M Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer M Frlg
 Gender: Male
 Music: Cool
 Items: Hyper Potion
@@ -6149,10 +6149,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rapid Spin
 - Rain Dance
 
-=== TRAINER_COOLTRAINER_PAUL ===
+=== TRAINER_ACE_TRAINER_PAUL ===
 Name: Paul
-Class: Cooltrainer Frlg
-Pic: Cooltrainer M Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer M Frlg
 Gender: Male
 Music: Cool
 Items: Full Restore
@@ -6199,10 +6199,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Screech
 - Disable
 
-=== TRAINER_COOLTRAINER_ROLANDO ===
+=== TRAINER_ACE_TRAINER_ROLANDO ===
 Name: Rolando
-Class: Cooltrainer Frlg
-Pic: Cooltrainer M Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer M Frlg
 Gender: Male
 Music: Cool
 Items: Hyper Potion
@@ -6249,10 +6249,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Smokescreen
 - Scary Face
 
-=== TRAINER_COOLTRAINER_GILBERT ===
+=== TRAINER_ACE_TRAINER_GILBERT ===
 Name: Gilbert
-Class: Cooltrainer Frlg
-Pic: Cooltrainer M Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer M Frlg
 Gender: Male
 Music: Cool
 Items: Hyper Potion
@@ -6299,10 +6299,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Swagger
 - Tail Whip
 
-=== TRAINER_COOLTRAINER_OWEN ===
+=== TRAINER_ACE_TRAINER_OWEN ===
 Name: Owen
-Class: Cooltrainer Frlg
-Pic: Cooltrainer M Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer M Frlg
 Gender: Male
 Music: Cool
 Items: Hyper Potion
@@ -6349,10 +6349,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Stomp
 - Tail Whip
 
-=== TRAINER_COOLTRAINER_BERKE ===
+=== TRAINER_ACE_TRAINER_BERKE ===
 Name: Berke
-Class: Cooltrainer Frlg
-Pic: Cooltrainer M Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer M Frlg
 Gender: Male
 Music: Cool
 Items: Full Restore
@@ -6399,10 +6399,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Supersonic
 - Protect
 
-=== TRAINER_COOLTRAINER_YUJI ===
+=== TRAINER_ACE_TRAINER_YUJI ===
 Name: Yuji
-Class: Cooltrainer Frlg
-Pic: Cooltrainer M Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer M Frlg
 Gender: Male
 Music: Cool
 Items: Hyper Potion
@@ -6449,10 +6449,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Leer
 - Growl
 
-=== TRAINER_COOLTRAINER_WARREN ===
+=== TRAINER_ACE_TRAINER_WARREN ===
 Name: Warren
-Class: Cooltrainer Frlg
-Pic: Cooltrainer M Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer M Frlg
 Gender: Male
 Music: Cool
 Items: Hyper Potion
@@ -6499,10 +6499,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Poison Fang
 - Double Kick
 
-=== TRAINER_COOLTRAINER_MARY ===
+=== TRAINER_ACE_TRAINER_MARY ===
 Name: Mary
-Class: Cooltrainer Frlg
-Pic: Cooltrainer F Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer F Frlg
 Gender: Male
 Music: Cool
 Items: Super Potion
@@ -6549,10 +6549,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Vine Whip
 - Leech Seed
 
-=== TRAINER_COOLTRAINER_CAROLINE ===
+=== TRAINER_ACE_TRAINER_CAROLINE ===
 Name: Caroline
-Class: Cooltrainer Frlg
-Pic: Cooltrainer F Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer F Frlg
 Gender: Male
 Music: Cool
 Items: Hyper Potion
@@ -6599,10 +6599,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Leech Life
 - Poison Powder
 
-=== TRAINER_COOLTRAINER_ALEXA ===
+=== TRAINER_ACE_TRAINER_ALEXA ===
 Name: Alexa
-Class: Cooltrainer Frlg
-Pic: Cooltrainer F Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer F Frlg
 Gender: Male
 Music: Cool
 Items: Full Restore
@@ -6649,10 +6649,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Soft Boiled
 - Minimize
 
-=== TRAINER_COOLTRAINER_SHANNON ===
+=== TRAINER_ACE_TRAINER_SHANNON ===
 Name: Shannon
-Class: Cooltrainer Frlg
-Pic: Cooltrainer F Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer F Frlg
 Gender: Male
 Music: Cool
 Items: Full Restore
@@ -6699,10 +6699,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Supersonic
 - Leech Life
 
-=== TRAINER_COOLTRAINER_NAOMI ===
+=== TRAINER_ACE_TRAINER_NAOMI ===
 Name: Naomi
-Class: Cooltrainer Frlg
-Pic: Cooltrainer F Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer F Frlg
 Gender: Male
 Music: Cool
 Items: Hyper Potion
@@ -6749,10 +6749,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Confuse Ray
 - Fire Spin
 
-=== TRAINER_COOLTRAINER_BROOKE ===
+=== TRAINER_ACE_TRAINER_BROOKE ===
 Name: Brooke
-Class: Cooltrainer Frlg
-Pic: Cooltrainer F Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer F Frlg
 Gender: Male
 Music: Cool
 Items: Full Restore
@@ -6799,10 +6799,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Sleep Powder
 - Poison Powder
 
-=== TRAINER_COOLTRAINER_AUSTINA ===
+=== TRAINER_ACE_TRAINER_AUSTINA ===
 Name: Austina
-Class: Cooltrainer Frlg
-Pic: Cooltrainer F Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer F Frlg
 Gender: Male
 Music: Cool
 Items: Full Restore
@@ -6849,10 +6849,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Poison Sting
 - Peck
 
-=== TRAINER_COOLTRAINER_JULIE ===
+=== TRAINER_ACE_TRAINER_JULIE ===
 Name: Julie
-Class: Cooltrainer Frlg
-Pic: Cooltrainer F Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer F Frlg
 Gender: Male
 Music: Cool
 Items: Hyper Potion
@@ -11242,10 +11242,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Minimize
 - Soft Boiled
 
-=== TRAINER_COOLTRAINER_LEROY ===
+=== TRAINER_ACE_TRAINER_LEROY ===
 Name: Leroy
-Class: Cooltrainer Frlg
-Pic: Cooltrainer M Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer M Frlg
 Gender: Male
 Music: Cool
 Items: Full Restore
@@ -11292,10 +11292,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Flamethrower
 - Ice Beam
 
-=== TRAINER_COOLTRAINER_MICHELLE ===
+=== TRAINER_ACE_TRAINER_MICHELLE ===
 Name: Michelle
-Class: Cooltrainer Frlg
-Pic: Cooltrainer F Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer F Frlg
 Gender: Male
 Music: Cool
 Items: Hyper Potion
@@ -12183,10 +12183,10 @@ Magneton
 Level: 28
 IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
 
-=== TRAINER_GAMER_DARIAN_2 ===
+=== TRAINER_GAMBLER_DARIAN_2 ===
 Name: Darian
-Class: Gamer Frlg
-Pic: Gamer Frlg
+Class: Gambler Frlg
+Pic: Gambler Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -12454,10 +12454,10 @@ Muk
 Level: 28
 IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
 
-=== TRAINER_GAMER_RICH_2 ===
+=== TRAINER_GAMBLER_RICH_2 ===
 Name: Rich
-Class: Gamer Frlg
-Pic: Gamer Frlg
+Class: Gambler Frlg
+Pic: Gambler Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -14148,10 +14148,10 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - Disarming Voice
 - Soft Boiled
 
-=== TRAINER_COOLTRAINER_LEROY_2 ===
+=== TRAINER_ACE_TRAINER_LEROY_2 ===
 Name: Leroy
-Class: Cooltrainer Frlg
-Pic: Cooltrainer M Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer M Frlg
 Gender: Male
 Music: Cool
 Items: Full Restore
@@ -14198,10 +14198,10 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - Thunder Fang
 - Ice Beam
 
-=== TRAINER_COOLTRAINER_MICHELLE_2 ===
+=== TRAINER_ACE_TRAINER_MICHELLE_2 ===
 Name: Michelle
-Class: Cooltrainer Frlg
-Pic: Cooltrainer F Frlg
+Class: Ace Trainer Frlg
+Pic: Ace Trainer F Frlg
 Gender: Male
 Music: Cool
 Items: Hyper Potion

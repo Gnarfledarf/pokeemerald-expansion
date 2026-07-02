@@ -22,7 +22,7 @@ TrainerTower_Lobby_OnReturnToField::
 	addobject LOCALID_TOWER_NURSE
 	addobject LOCALID_TOWER_MART_CLERK
 	addobject LOCALID_TOWER_RECEPTIONIST
-	addobject LOCALID_TOWER_COOLTRAINER_F
+	addobject LOCALID_TOWER_ACE_TRAINER_F
 	addobject LOCALID_TOWER_BALDING_MAN
 	end
 
