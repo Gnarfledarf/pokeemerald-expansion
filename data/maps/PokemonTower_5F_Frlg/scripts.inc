@@ -48,7 +48,7 @@ PokemonTower_5F_Text_RestHereInPurifiedSpace::
 
 PokemonTower_5F_Text_TammyIntro::
 	.string "Give…me…\n"
-	.string "your…all…$"
+	.string "your…soul…$"
 
 PokemonTower_5F_Text_TammyDefeat::
 	.string "Gasp!$"
