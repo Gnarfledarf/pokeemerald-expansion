@@ -1448,7 +1448,7 @@ Text_PokemonJumpInfo_Frlg::
 	.string "“Pokémon Jump\p"
 	.string "Make your Pokémon skip the\n"
 	.string "Vine Whip rope with the A Button.\p"
-	.string "Only mini Pokémon around 28 inches\n"
+	.string "Only mini Pokémon around 0.7 meters\n"
 	.string "or less may participate.\p"
 	.string "Pokémon that only swim, burrow, or\n"
 	.string "fly are not good at jumping.\p"
@@ -1509,7 +1509,7 @@ EventScript_ExplainPokemonJumpRequirements_Frlg::
 
 Text_ShortJumpingPokemonAllowed_Frlg::
 	.string "“Pokémon Jump is open to Pokémon\n"
-	.string "around 28 inches or less.\p"
+	.string "around 0.7 meters or less.\p"
 	.string "What you can't enter are those\n"
 	.string "Pokémon that can't jump.\p"
 	.string "You know, like Pokémon that only\n"

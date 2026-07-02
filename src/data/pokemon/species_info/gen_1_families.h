@@ -1612,8 +1612,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .description = COMPOUND_STRING(
         #ifdef FIRERED
             "Often found in forests and grasslands.\n"
-            "It has a sharp, toxic barb of around two\n"
-            "inches on top of its head."
+            "It has a sharp, toxic barb of around\n"
+            "five centimeters on top of its head."
         #else
             "Often found in forests, eating leaves.\n"
             "It has a sharp stinger on its head that\n"
