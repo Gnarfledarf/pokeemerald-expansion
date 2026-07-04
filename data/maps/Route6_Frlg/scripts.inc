@@ -1,5 +1,23 @@
 Route6_Frlg_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Route6_OnLoad
 	.byte 0
+
+Route6_OnLoad::
+#ifdef FIRERED
+	copyvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SPECIES(ODDISH)
+	copyvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SPECIES(ODDISH)
+	copyvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_SPECIES(ODDISH)
+	copyvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_SPECIES(BEEDRILL)
+#else
+#ifdef LEAFGREEN
+	copyvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SPECIES(BELLSPROUT)
+	copyvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SPECIES(BELLSPROUT)
+	copyvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_SPECIES(BELLSPROUT)
+	copyvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_SPECIES(BUTTERFREE)
+#endif
+#endif
+	special SetRoofBirds
+	end
 
 Route6_EventScript_UndergroundPathSign::
 	msgbox Route6_Text_UndergroundPathSign, MSGBOX_SIGN

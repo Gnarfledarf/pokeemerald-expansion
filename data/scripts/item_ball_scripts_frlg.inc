@@ -91,6 +91,10 @@ SSAnne_Kitchen_EventScript_ItemGreatBall::
 	finditem ITEM_GREAT_BALL
 	end
 
+Route9_EventScript_ItemTM127::
+	finditem ITEM_TM127
+	end
+
 Route9_EventScript_ItemTM40::
 	finditem ITEM_TM40
 	end
@@ -473,6 +477,11 @@ PokemonMansion_2F_EventScript_ItemHPUp::
 
 ViridianCity_EventScript_ItemPotion::
 	finditem ITEM_POTION
+	end
+
+@TM Rock Polish
+Route10_EventScript_ItemTM69::
+	finditem ITEM_TM69
 	end
 
 Route11_EventScript_ItemGreatBall::
