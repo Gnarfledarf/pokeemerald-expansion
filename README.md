@@ -69,3 +69,4 @@ Our community uses the [ROM Hacking Hideout (RHH) Discord server](https://discor
     [Deokishisu - fix that prevents swapping mail between party members](https://www.pokecommunity.com/threads/simple-modifications-directory.416647/post-10517557)
 [Anon822 - Category icons in battle](https://www.pokecommunity.com/threads/simple-modifications-directory.416647/page-20#post-10527471)
 [doodles-hearth - Autorun toggle](https://github.com/doodles-hearth/pokemon-hearth/pull/239)
+[agsmgmaster64 - FRLG Misc Item Menus](https://github.com/agsmgmaster64/worldlinkdeluxe-ame/tree/frlg-map-ui)
