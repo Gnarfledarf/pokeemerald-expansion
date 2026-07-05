@@ -1,9 +1,21 @@
 Route12_Frlg_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Route12_OnLoad
 	map_script MAP_SCRIPT_ON_RESUME, Route12_OnResume
 	.byte 0
 
 Route12_OnResume::
 	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Route12_EventScript_TryRemoveSnorlax
+	end
+
+Route12_OnLoad::
+#ifdef FIRERED
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SPECIES(HORSEA)
+#else
+#ifdef LEAFGREEN
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SPECIES(KRABBY)
+#endif
+#endif
+	special SetRoofBirds
 	end
 
 Route12_EventScript_TryRemoveSnorlax::

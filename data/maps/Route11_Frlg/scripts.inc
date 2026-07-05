@@ -1,5 +1,10 @@
 Route11_Frlg_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Route11_OnLoad
 	.byte 0
+
+Route11_OnLoad::
+	special SetRoofBirds
+	end
 
 Route11_EventScript_DiglettsCaveSign::
 	msgbox Route11_Text_DiglettsCave, MSGBOX_SIGN

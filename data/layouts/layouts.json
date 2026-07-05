@@ -6296,7 +6296,7 @@
     {
       "id": "LAYOUT_LAVENDER_TOWN",
       "name": "LavenderTown_Layout",
-      "width": 24,
+      "width": 28,
       "height": 20,
       "border_width": 2,
       "border_height": 2,
@@ -6309,7 +6309,7 @@
     {
       "id": "LAYOUT_VERMILION_CITY",
       "name": "VermilionCity_Layout",
-      "width": 48,
+      "width": 51,
       "height": 40,
       "border_width": 2,
       "border_height": 2,
@@ -6492,7 +6492,7 @@
       "id": "LAYOUT_ROUTE9",
       "name": "Route9_Layout",
       "width": 72,
-      "height": 20,
+      "height": 22,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General_Frlg",
@@ -6504,8 +6504,8 @@
     {
       "id": "LAYOUT_ROUTE10",
       "name": "Route10_Layout",
-      "width": 24,
-      "height": 80,
+      "width": 25,
+      "height": 82,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General_Frlg",
@@ -6530,7 +6530,7 @@
     {
       "id": "LAYOUT_ROUTE12",
       "name": "Route12_Layout",
-      "width": 24,
+      "width": 29,
       "height": 120,
       "border_width": 2,
       "border_height": 2,
