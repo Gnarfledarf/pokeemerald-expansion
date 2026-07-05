@@ -110,7 +110,6 @@ CeruleanCity_Movement_RivalEnter::
 	walk_down
 	walk_down
 	walk_down
-	walk_down
 	step_end
 
 CeruleanCity_Movement_RivalStartExit::
