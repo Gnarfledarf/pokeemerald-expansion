@@ -732,13 +732,13 @@ static void GetTMNumberAndMoveString(u8 * dest, u16 itemId)
     {
         StringAppend(gStringVar4, sText_ClearTo18);
         StringAppend(gStringVar4, gText_NumberClear01);
-        ConvertIntToDecimalStringN(gStringVar1, tmIdx - NUM_TECHNICAL_MACHINES, STR_CONV_MODE_LEADING_ZEROS, 1);
+        ConvertIntToDecimalStringN(gStringVar1, tmIdx - NUM_TECHNICAL_MACHINES, STR_CONV_MODE_LEADING_ZEROS, NUM_HIDDEN_MACHINES >= 10 ? 2 : 1);
         StringAppend(gStringVar4, gStringVar1);
     }
     else
     {
         StringAppend(gStringVar4, gText_NumberClear01);
-        ConvertIntToDecimalStringN(gStringVar1, tmIdx, STR_CONV_MODE_LEADING_ZEROS, 2);
+        ConvertIntToDecimalStringN(gStringVar1, tmIdx, STR_CONV_MODE_LEADING_ZEROS, NUM_TECHNICAL_MACHINES >= 100 ? 3 : 2);
         StringAppend(gStringVar4, gStringVar1);
     }
     StringAppend(gStringVar4, sText_SingleSpace);
@@ -785,8 +785,10 @@ static void List_ItemPrintFunc(u8 windowId, u32 itemIndex, u8 y)
 static void PrintDescription(s32 itemIndex)
 {
     const u8 * str;
+
+    enum Item itemId = GetBagItemId(POCKET_TM_HM, itemIndex);
     if (itemIndex != LIST_CANCEL)
-        str = GetItemLongDescription(GetTMCaseItemIdByPosition(itemIndex));
+        str = GetMoveDescription(ItemIdToBattleMoveId(itemId));
     else
         str = sText_TMCaseWillBePutAway;
     FillWindowPixelBuffer(WIN_DESCRIPTION, 0);
