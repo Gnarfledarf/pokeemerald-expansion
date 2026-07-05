@@ -1435,7 +1435,7 @@ void UpdatePickStateFromSpecialVar8005(void)
 //     gFameChecker_ListMenuTemplate.lettersSpacing = 0;
 //     gFameChecker_ListMenuTemplate.itemVerticalPadding = 0;
 //     gFameChecker_ListMenuTemplate.scrollMultiple = 0;
-//     gFameChecker_ListMenuTemplate.fontId = FONT_NORMAL;
+//     gFameChecker_ListMenuTemplate.fontId = FONT_SHORT;
 //     gFameChecker_ListMenuTemplate.cursorKind = 0;
 // }
 

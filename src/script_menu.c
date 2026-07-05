@@ -94,7 +94,7 @@ static const struct ListMenuTemplate sScriptableListMenuTemplate =
     .cursorShadowPal = 3,
     .lettersSpacing = 1,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
-    .fontId = FONT_NORMAL,
+    .fontId = FONT_SHORT,
 };
 
 bool8 ScriptMenu_MultichoiceDynamic(u8 left, u8 top, u8 argc, struct ListMenuItem *items, bool8 ignoreBPress, u8 maxBeforeScroll, u32 initialRow, u32 callbackSet)

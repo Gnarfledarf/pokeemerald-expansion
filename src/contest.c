@@ -1038,13 +1038,13 @@ static const s8 sContestExcitementTable[CONTEST_CATEGORIES_COUNT][CONTEST_CATEGO
 static void CopyNicknameToFit(u8 *dest, u32 contestant)
 {
     u8 *end = StringCopy(dest, gContestMons[contestant].nickname);
-    WrapFontIdToFit(dest, end, FONT_NORMAL, 60);
+    WrapFontIdToFit(dest, end, FONT_SHORT, 60);
 }
 
 static void CopyMoveNameToFit(u8 *dest, enum Move move)
 {
     u8 *end = StringCopy(dest, GetMoveName(move));
-    WrapFontIdToFit(dest, end, FONT_NORMAL, 84);
+    WrapFontIdToFit(dest, end, FONT_SHORT, 84);
 }
 
 static void TaskDummy1(u8 taskId)
@@ -1598,7 +1598,7 @@ static void Task_ShowMoveSelectScreen(u8 taskId)
         moveNameBuffer = StringCopy(moveNameBuffer, GetMoveName(move));
 
         FillWindowPixelBuffer(i + MOVE_WINDOWS_START, PIXEL_FILL(0));
-        Contest_PrintTextToBg0WindowAt(i + MOVE_WINDOWS_START, moveName, 5, 1, GetFontIdToFit(moveName, FONT_NARROW, 0, WindowWidthPx(i + MOVE_WINDOWS_START) - 11));
+        Contest_PrintTextToBg0WindowAt(i + MOVE_WINDOWS_START, moveName, 5, 1, GetFontIdToFit(moveName, FONT_SHORT_NARROW, 0, WindowWidthPx(i + MOVE_WINDOWS_START) - 11));
     }
 
     DrawMoveSelectArrow(eContest.playerMoveChoice);
@@ -3063,10 +3063,10 @@ static void PrintContestantTrainerNameWithColor(u8 contestant, u8 color)
     StringCopy(buffer, gText_Slash);
     StringAppend(buffer, gContestMons[contestant].trainerName);
     Contest_CopyStringWithColor(buffer, color);
-    offset = GetStringRightAlignXOffset(FONT_NARROW, gDisplayedStringBattle, 0x60);
+    offset = GetStringRightAlignXOffset(FONT_SHORT_NARROW, gDisplayedStringBattle, 0x60);
     if (offset > 55)
         offset = 55;
-    Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[contestant], gDisplayedStringBattle, offset, 1, FONT_NARROW);
+    Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[contestant], gDisplayedStringBattle, offset, 1, FONT_SHORT_NARROW);
 }
 
 static void PrintContestantMonName(u8 contestant)
@@ -3077,7 +3077,7 @@ static void PrintContestantMonName(u8 contestant)
 static void PrintContestantMonNameWithColor(u8 contestant, u8 color)
 {
     Contest_CopyStringWithColor(gContestMons[contestant].nickname, color);
-    Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[contestant], gDisplayedStringBattle, 5, 1, GetFontIdToFit(gContestMons[contestant].nickname, FONT_NARROW, 0, 50));
+    Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[contestant], gDisplayedStringBattle, 5, 1, GetFontIdToFit(gContestMons[contestant].nickname, FONT_SHORT_NARROW, 0, 50));
 }
 
 static u16 CalculateContestantRound1Points(u8 who, enum ContestCategories contestCategory)
@@ -4295,7 +4295,7 @@ static void ContestDebugDoPrint(void)
                 txtPtr = StringCopy(txtPtr, gText_OneDash);
             }
             ConvertIntToDecimalStringN(txtPtr, value, STR_CONV_MODE_LEFT_ALIGN, 4);
-            Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[i], text, 55, 1, FONT_NARROW);
+            Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[i], text, 55, 1, FONT_SHORT_NARROW);
         }
         for (i = 0; i < CONTESTANT_COUNT; i++)
         {
@@ -4307,7 +4307,7 @@ static void ContestDebugDoPrint(void)
                 txtPtr = StringCopy(txtPtr, gText_OneDash);
             }
             ConvertIntToDecimalStringN(txtPtr, value, STR_CONV_MODE_LEFT_ALIGN, 4);
-            Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[i], text, 5, 1, FONT_NARROW);
+            Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[i], text, 5, 1, FONT_SHORT_NARROW);
         }
         SwapMoveDescAndContestTilemaps();
         break;
@@ -5430,7 +5430,7 @@ static void Contest_PrintTextToBg0WindowStd(u32 windowId, const u8 *b)
     printerTemplate.currentChar = b;
     printerTemplate.type = WINDOW_TEXT_PRINTER;
     printerTemplate.windowId = windowId;
-    printerTemplate.fontId = FONT_NORMAL;
+    printerTemplate.fontId = FONT_SHORT;
     printerTemplate.x = 0;
     printerTemplate.y = 1;
     printerTemplate.currentX = 0;
@@ -5479,7 +5479,7 @@ static void Contest_StartTextPrinter(const u8 *currChar, bool32 b)
     printerTemplate.currentChar = currChar;
     printerTemplate.type = WINDOW_TEXT_PRINTER;
     printerTemplate.windowId = WIN_GENERAL_TEXT;
-    printerTemplate.fontId = FONT_NORMAL;
+    printerTemplate.fontId = FONT_SHORT;
     printerTemplate.x = 0;
     printerTemplate.y = 1;
     printerTemplate.currentX = 0;
@@ -5963,7 +5963,7 @@ static void ContestDebugPrintBitStrings(void)
         for (i = 0; i < CONTESTANT_COUNT; i++)
         {
             txtPtr = StringCopy(text1, COMPOUND_STRING("C."));
-            Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[i], text1, 5, 1, FONT_NARROW);
+            Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[i], text1, 5, 1, FONT_SHORT_NARROW);
             bits = gContestResources->tv[i].winnerFlags;
             for (j = 7; j > -1; j--) // Weird loop.
             {
@@ -5976,7 +5976,7 @@ static void ContestDebugPrintBitStrings(void)
 
             text2[j] = EOS;
             Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[i], text2, 5, 1, 7);
-            Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[i], text1 + j, 55, 1, FONT_NARROW);
+            Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[i], text1 + j, 55, 1, FONT_SHORT_NARROW);
         }
     }
     else // CONTEST_DEBUG_MODE_PRINT_LOSER_FLAGS
@@ -5996,8 +5996,8 @@ static void ContestDebugPrintBitStrings(void)
                 text2[j] = text1[j];
 
             text2[j] = EOS;
-            Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[i], text2, 5, 1, FONT_NARROW);
-            Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[i], text1 + j, 55, 1, FONT_NARROW);
+            Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[i], text2, 5, 1, FONT_SHORT_NARROW);
+            Contest_PrintTextToBg0WindowAt(gContestantTurnOrder[i], text1 + j, 55, 1, FONT_SHORT_NARROW);
         }
     }
     SwapMoveDescAndContestTilemaps();

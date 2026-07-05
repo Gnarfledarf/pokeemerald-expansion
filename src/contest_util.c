@@ -1913,7 +1913,7 @@ static void AddContestTextPrinterFitWidth(int windowId, u8 *str, int x, int widt
     textPrinter.currentChar = str;
     textPrinter.type = WINDOW_TEXT_PRINTER;
     textPrinter.windowId = windowId;
-    textPrinter.fontId = GetFontIdToFit(str, FONT_NARROW, 0, widthPx);
+    textPrinter.fontId = GetFontIdToFit(str, FONT_SHORT_NARROW, 0, widthPx);
     textPrinter.x = x;
     textPrinter.y = 2;
     textPrinter.currentX = x;

@@ -718,7 +718,7 @@ static const struct ListMenuTemplate sListMenuTemplate_PossibleGroupMembers = {
     .lettersSpacing = 0,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
-    .fontId = FONT_NORMAL,
+    .fontId = FONT_SHORT,
     .cursorKind = CURSOR_INVISIBLE
 };
 
@@ -778,7 +778,7 @@ static const struct ListMenuTemplate sListMenuTemplate_UnionRoomGroups = {
     .lettersSpacing = 0,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_MULTIPLE_SCROLL_DPAD,
-    .fontId = FONT_NORMAL,
+    .fontId = FONT_SHORT,
     .cursorKind = CURSOR_BLACK_ARROW
 };
 
@@ -816,7 +816,7 @@ static const struct ListMenuTemplate sListMenuTemplate_InviteToActivity = {
     .lettersSpacing = 0,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
-    .fontId = FONT_NORMAL,
+    .fontId = FONT_SHORT,
     .cursorKind = CURSOR_BLACK_ARROW
 };
 
@@ -853,7 +853,7 @@ static const struct ListMenuTemplate sListMenuTemplate_RegisterForTrade = {
     .lettersSpacing = 0,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
-    .fontId = FONT_NORMAL,
+    .fontId = FONT_SHORT,
     .cursorKind = CURSOR_BLACK_ARROW
 };
 
@@ -907,7 +907,7 @@ static const struct ListMenuTemplate sMenuTemplate_TradingBoardRequestType = {
     .lettersSpacing = 0,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
-    .fontId = FONT_NORMAL,
+    .fontId = FONT_SHORT,
     .cursorKind = CURSOR_BLACK_ARROW
 };
 
@@ -961,7 +961,7 @@ static const struct ListMenuTemplate sTradeBoardListMenuTemplate = {
     .lettersSpacing = 0,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
-    .fontId = FONT_NORMAL,
+    .fontId = FONT_SHORT,
     .cursorKind = CURSOR_BLACK_ARROW
 };
 
@@ -1013,7 +1013,7 @@ static const struct ListMenuTemplate sEmptyListMenuTemplate = {
     .lettersSpacing = 0,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_MULTIPLE_SCROLL_DPAD,
-    .fontId = FONT_NORMAL,
+    .fontId = FONT_SHORT,
     .cursorKind = CURSOR_BLACK_ARROW
 };
 

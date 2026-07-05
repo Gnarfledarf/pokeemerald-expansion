@@ -837,7 +837,7 @@ static const struct ListMenuTemplate sCaughtBannedSpeciesListTemplate =
     .lettersSpacing = 1,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
-    .fontId = FONT_NORMAL,
+    .fontId = FONT_SHORT,
     .cursorKind = 0
 };
 
