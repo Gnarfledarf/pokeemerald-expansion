@@ -3011,15 +3011,15 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 
     if (sPartyMenuInternal->numActions < 5
         && (CheckBagHasItem(ITEM_HM02, 1))
-        && ((CanTeachMove(&mons[slotId], MOVE_FLY) == CAN_LEARN_MOVE) || (CanTeachMove(&mons[slotId], MOVE_FLY) == ALREADY_KNOWS_MOVE))) // If Mon can learn Fly and action list consists of < 4 moves, add FLY to action list
+        && ((CanTeachMove(&mons[slotId], MOVE_FLY) == CAN_LEARN_MOVE) || (CanTeachMove(&mons[slotId], MOVE_FLY) == ALREADY_KNOWS_MOVE))) // If Mon can learn Fly and action list consists of < 4 moves, add Fly to action list
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
     if (sPartyMenuInternal->numActions < 5
         && (CheckBagHasItem(ITEM_HM01, 1))
-        && ((CanTeachMove(&mons[slotId], MOVE_CUT) == CAN_LEARN_MOVE) || (CanTeachMove(&mons[slotId], MOVE_CUT) == ALREADY_KNOWS_MOVE))) // If Mon can learn Fly and action list consists of < 4 moves, add CUT to action list
+        && ((CanTeachMove(&mons[slotId], MOVE_CUT) == CAN_LEARN_MOVE) || (CanTeachMove(&mons[slotId], MOVE_CUT) == ALREADY_KNOWS_MOVE))) // If Mon can learn Fly and action list consists of < 4 moves, add Cut to action list
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 0 + MENU_FIELD_MOVES);
     if (sPartyMenuInternal->numActions < 5
         && (CheckBagHasItem(ITEM_HM05, 1))
-        && ((CanTeachMove(&mons[slotId], MOVE_FLASH) == CAN_LEARN_MOVE) || (CanTeachMove(&mons[slotId], MOVE_FLASH) == ALREADY_KNOWS_MOVE))) // If Mon can learn Flash and action list consists of < 4 moves, add FLASH to action list
+        && ((CanTeachMove(&mons[slotId], MOVE_FLASH) == CAN_LEARN_MOVE) || (CanTeachMove(&mons[slotId], MOVE_FLASH) == ALREADY_KNOWS_MOVE))) // If Mon can learn Flash and action list consists of < 4 moves, add Flash to action list
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
 
     if (!InBattlePike())

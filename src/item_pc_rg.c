@@ -146,11 +146,11 @@ static const struct BgTemplate sBgTemplates[2] =
 };
 
 static const u8 sText_Withdraw[] = _("Withdraw");
-static const u8 sText_WithdrawItem[] = _("WITHDRAW\nITEM");
+static const u8 sText_WithdrawItem[] = _("Withdraw\nItem");
 static const u8 sText_ReturnToPC[] = _("Return to the PC.");
 static const u8 sText_WithdrawHowManyItems[] = _("Withdraw how many\n{STR_VAR_1}?");
 static const u8 sText_WithdrawXItems[] = _("Withdrew {STR_VAR_2}\n{STR_VAR_1}.");
-static const u8 sText_NoRoomInBag[] = _("There is no more\nroom in the BAG.");
+static const u8 sText_NoRoomInBag[] = _("There is no more\nroom in the Bag.");
 static const u8 sText_WhereShouldTheStrVar1BePlaced[] = _("Where should the {STR_VAR_1}\nbe placed?");
 
 static const struct MenuAction sItemPcSubmenuOptions[] =

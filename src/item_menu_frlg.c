@@ -511,7 +511,7 @@ static const u8 sListItemTextColor_TmCase_BerryPouch[] = _("{COLOR_HIGHLIGHT_SHA
 
 static const u8 sText_TossOutHowManyStrVar1s[] = _("Toss out how many\n{STR_VAR_1}?");
 static const u8 sText_ThrowAwayStrVar2OfThisItemQM[] = _("Throw away {STR_VAR_2} of\nthis item?");
-static const u8 sText_DepositItem[] = _("DEPOSIT ITEM");
+static const u8 sText_DepositItem[] = _("Deposit Item");
 static const u8 sText_NoRoomForItems[] = _("There's no room to\nstore items.");
 static const u8 sText_DepositHowManyVar1[] = _("Deposit how many\n{STR_VAR_1}?");
 static const u8 sText_DepositedVar2Var1s[] = _("Deposited {STR_VAR_2}\n{STR_VAR_1}.");
@@ -527,14 +527,14 @@ static const struct MenuAction sItemMenuContextActions[ITEMMENUACTION_COUNT] = {
     [ITEMMENUACTION_GIVE]           = { gMenuText_Give,             {Task_ItemMenuAction_Give}},
     [ITEMMENUACTION_CANCEL]         = { gText_Cancel,               {Task_ItemMenuAction_Cancel}},
     [ITEMMENUACTION_BATTLE_USE]     = { gMenuText_Use,              {Task_ItemMenuAction_BattleUse}},
-    [ITEMMENUACTION_CHECK]          = { COMPOUND_STRING("CHECK"),   {Task_ItemMenuAction_Use}},
-    [ITEMMENUACTION_OPEN]           = { COMPOUND_STRING("OPEN"),    {Task_ItemMenuAction_Use}},
-    [ITEMMENUACTION_OPEN_BERRIES]   = { COMPOUND_STRING("OPEN"),    {Task_ItemMenuAction_BattleUse}},
-    [ITEMMENUACTION_WALK]           = { COMPOUND_STRING("WALK"),    {Task_ItemMenuAction_Use}},
+    [ITEMMENUACTION_CHECK]          = { COMPOUND_STRING("Check"),   {Task_ItemMenuAction_Use}},
+    [ITEMMENUACTION_OPEN]           = { COMPOUND_STRING("Open"),    {Task_ItemMenuAction_Use}},
+    [ITEMMENUACTION_OPEN_BERRIES]   = { COMPOUND_STRING("Open"),    {Task_ItemMenuAction_BattleUse}},
+    [ITEMMENUACTION_WALK]           = { COMPOUND_STRING("Walk"),    {Task_ItemMenuAction_Use}},
     [ITEMMENUACTION_DESELECT]       = { gText_Deselect,             {Task_ItemMenuAction_ToggleSelect}},
-    [ITEMMENUACTION_SORT_NAME]      = { COMPOUND_STRING("NAME"),    {Task_ItemMenuAction_SortByName}},
-    [ITEMMENUACTION_SORT_AMOUNT]    = { COMPOUND_STRING("AMOUNT"),  {Task_ItemMenuAction_SortByAmount}},
-    [ITEMMENUACTION_SORT_TYPE]      = { COMPOUND_STRING("TYPE"),    {Task_ItemMenuAction_SortByType}},
+    [ITEMMENUACTION_SORT_NAME]      = { COMPOUND_STRING("NAme"),    {Task_ItemMenuAction_SortByName}},
+    [ITEMMENUACTION_SORT_AMOUNT]    = { COMPOUND_STRING("Amount"),  {Task_ItemMenuAction_SortByAmount}},
+    [ITEMMENUACTION_SORT_TYPE]      = { COMPOUND_STRING("Type"),    {Task_ItemMenuAction_SortByType}},
     [ITEMMENUACTION_DUMMY]          = { COMPOUND_STRING(""),        {NULL}}
 };
 
